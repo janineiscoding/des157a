@@ -63,15 +63,16 @@ header{
 #banner .ghost{
     bottom: 15px;
     left: 0px;
-}
-
-#banner .ghost:hover{
-    opacity: 50%;
+    z-index: 1;
 }
 
 /* #banner .ghost:hover{
-    animation: run 7s infinite;
+    opacity: 50%;
 } */
+
+#banner .ghost:hover{
+    animation: run 7s infinite;
+}
 
 @keyframes run {
     0%{
