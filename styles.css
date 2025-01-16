@@ -23,3 +23,253 @@ a{
 }
 
 /* Start Styling */
+body{
+    background: #181818;
+    position: relative;
+    height: 100vh;
+    max-width: 1200px;
+    /* justify-content: center; */
+    justify-self: center;
+}
+
+div{
+    color: #e1e1e1;
+    text-align: right;
+    text-shadow: 2px 2px 0px #5900FF;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    padding: 21px 0;
+}
+
+header{
+    position: relative;
+    padding: 7% 5% 7% 5%;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    height: 40%;
+}
+
+#banner img{
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    padding: 0;
+}
+
+#banner .ghost{
+    bottom: 15px;
+    left: 0px;
+}
+
+#banner .ghost:hover{
+    opacity: 50%;
+}
+
+/* #banner .ghost:hover{
+    animation: run 7s infinite;
+} */
+
+@keyframes run {
+    0%{
+        transform: translateX(0px);
+    }
+    10%{
+        transform: translateX(-40px);
+    }
+    11%{
+        transform: translateX(-40px);
+        opacity: 0%;
+    }
+    50%{
+        transform: translateX(300px);
+        opacity: 0%;
+    }
+    80%{
+        opacity: 100%;
+    }
+
+    100%{
+        transform: translateX(80px);
+    }
+
+}
+
+#banner .haze1{
+    animation: fade1 4s infinite;
+}
+
+#banner .haze2{
+    animation: fade2 4s infinite;
+}
+
+@keyframes fade1 {
+    0%{
+        opacity: 0%;
+    }
+    0%{
+        opacity: 0%;
+    }
+    50%{
+        opacity: 90%;
+    }
+    60%{
+        opacity: 90%;
+    }
+    80%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 0%;
+    }
+}
+
+@keyframes fade2 {
+    0%{
+        opacity: 0%;
+    }
+    10%{
+        opacity: 90%;
+    }
+    80%{
+        opacity: 90%;
+    }
+    100%{
+        opacity: 0%;
+    }
+}
+
+#banner img{
+    max-width: 100%;
+    /* scale: 120%; */
+    /* justify-content: center; */
+    /* justify-items: center; */
+    /* justify-self: center; */
+    /* align-self: center; */
+}
+
+header h3{
+    color: var(--Main, #5d18ff);
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+header h1{
+    color: #e1e1e1;
+    text-shadow: 4px 4px 0px #5900FF;
+    font-family: Silkscreen;
+    font-size: 78.68px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -5px;
+    margin-bottom: 50px;
+}
+
+header p{
+    color: #e1e1e1;
+    /* text-align: right; */
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: end;
+}
+
+main{
+    margin: 50px 5% auto 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+section{
+    /* padding-right: 100px; */
+}
+
+section h2{
+    display: inline-flex;
+    padding: 4px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--Main, #5900FF);
+    box-shadow: 3px 3px 0px 0px #FFF, 4px 4px 0px 0px #3A00A7 inset;
+    color: #e1e1e1;
+    font-family: "Silkscreen";
+    font-size: 23.085px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 25px;
+}
+
+section ul{
+    list-style-type: square;
+    color:#e1e1e1;
+    padding-left: 15px;
+}
+
+section ul li a{
+    color: #e1e1e1;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 220%;
+}
+
+body div ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.square{
+    width: 6px;
+    height: 6px;
+    background: #e1e1e1;
+}
+
+footer{
+    display: flex;
+    /* align-items: flex-end; */
+    /* align-items: end; */
+    /* display: inline-block; */
+    /* align-self: flex-end; */
+    margin: auto auto 17px auto; 
+    position: absolute;
+    /* bottom: 0; */
+    /* right:0; */
+    /* top: 0; */
+    bottom: 0;
+    left: 38%;
+    /* align-self: center; */
+}
+
+footer p{
+    color: #e1e1e1;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-self: center;
+    /* text-align: center; */
+    /* align-items: flex-end; */
+    /* align-self: flex-end; */
+    /* margin: auto auto 17px auto;  */
+}
+
+footer p em{
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-color:#5900FF;
+    text-decoration-thickness: 2.5px;
+}
