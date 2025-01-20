@@ -28,7 +28,6 @@ body{
     position: relative;
     height: 100vh;
     max-width: 1200px;
-    /* justify-content: center; */
     justify-self: center;
 }
 
@@ -59,7 +58,6 @@ header{
     z-index: -1;
     bottom: 0;
     left: 0;
-    /* padding: 0; */
 }
 
 #banner .ghost{
@@ -145,11 +143,6 @@ header{
 
 #banner img{
     max-width: 100%;
-    /* scale: 120%; */
-    /* justify-content: center; */
-    /* justify-items: center; */
-    /* justify-self: center; */
-    /* align-self: center; */
 }
 
 header h3{
@@ -191,10 +184,6 @@ main{
     margin: 50px 5% auto 5%;
     display: flex;
     justify-content: space-between;
-}
-
-section{
-    /* padding-right: 100px; */
 }
 
 section h2{
@@ -242,18 +231,10 @@ body div ul{
 
 footer{
     display: flex;
-    /* align-items: flex-end; */
-    /* align-items: end; */
-    /* display: inline-block; */
-    /* align-self: flex-end; */
     margin: auto auto 17px auto; 
     position: absolute;
-    /* bottom: 0; */
-    /* right:0; */
-    /* top: 0; */
     bottom: 0;
     left: 30%;
-    /* align-self: center; */
     justify-content: center;
 }
 
@@ -266,10 +247,6 @@ footer p{
     font-weight: 400;
     line-height: normal;
     align-self: center;
-    /* text-align: center; */
-    /* align-items: flex-end; */
-    /* align-self: flex-end; */
-    /* margin: auto auto 17px auto;  */
 }
 
 footer p em{
