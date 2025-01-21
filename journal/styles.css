@@ -49,100 +49,7 @@ header{
     padding: 7% 5% 7% 5%;
     border-top: 1px solid #e1e1e1;
     border-bottom: 1px solid #e1e1e1;
-    height: 40%;
     position: relative;
-}
-
-#banner img{
-    position: absolute;
-    z-index: -1;
-    bottom: 0;
-    left: 0;
-}
-
-#banner .ghost{
-    width: 42px;
-    height: 42px;
-    bottom: 15px;
-    left: 30px;
-    z-index: 1;
-}
-
-#banner .ghost:hover{
-    animation: run 5s infinite;
-}
-
-@keyframes run {
-    0%{
-        transform: translateX(0px);
-    }
-    20%{
-        transform: translateX(-40px);
-    }
-    21%{
-        transform: translateX(-40px);
-        opacity: 0%;
-    }
-    40%{
-        transform: translateX(300px);
-        opacity: 0%;
-    }
-    80%{
-        opacity: 100%;
-    }
-
-    100%{
-        transform: translateX(0px);
-    }
-
-}
-
-#banner .haze1{
-    animation: fade1 4s infinite;
-}
-
-#banner .haze2{
-    animation: fade2 4s infinite;
-}
-
-@keyframes fade1 {
-    0%{
-        opacity: 0%;
-    }
-    0%{
-        opacity: 0%;
-    }
-    50%{
-        opacity: 90%;
-    }
-    60%{
-        opacity: 90%;
-    }
-    80%{
-        opacity: 0%;
-    }
-    100%{
-        opacity: 0%;
-    }
-}
-
-@keyframes fade2 {
-    0%{
-        opacity: 0%;
-    }
-    10%{
-        opacity: 90%;
-    }
-    80%{
-        opacity: 90%;
-    }
-    100%{
-        opacity: 0%;
-    }
-}
-
-#banner img{
-    max-width: 100%;
 }
 
 header h3{
@@ -164,20 +71,16 @@ header h1{
     font-weight: 700;
     line-height: 1em;
     letter-spacing: -5px;
-    margin-bottom: 50px;
 }
 
-main p{
+p{
     color: #e1e1e1;
     font-family: Poppins;
-    font-size: 15px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    text-align: end;
-    position: absolute;
-    bottom: 20px;
-    right: 50px;
+    text-align: start;
 }
 
 main{
@@ -186,7 +89,7 @@ main{
     justify-content: space-between;
 }
 
-section h2{
+h2{
     display: inline-flex;
     padding: 4px 12px;
     justify-content: center;
@@ -209,13 +112,14 @@ ul{
     padding-left: 15px;
 }
 
-section ul li a{
+a{
     color: #e1e1e1;
     font-family: Poppins;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 220%;
+    text-decoration: underline;
 }
 
 body div ul{
