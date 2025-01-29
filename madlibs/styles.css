@@ -1,0 +1,50 @@
+/* Reset */
+*{
+    box-sizing: border-box;
+}
+
+nav ul, nav ol{
+    list-style-type: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, p, ul, ol{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Styling */
+
+body{
+    background: #181818;
+    justify-self: center;
+}
+
+h1{
+    color: #e1e1e1;
+    text-shadow: 4px 4px 0px #5900FF;
+    font-family: Silkscreen;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1em;
+    letter-spacing: -5px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+img{
+    border: solid #e1e1e1;
+    box-shadow: 3px 3px 0px 0px #5900FF, 4px 4px 0px 0px #3A00A7;
+    margin-bottom: 20px;
+    justify-self: center;
+}
