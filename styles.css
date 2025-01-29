@@ -150,7 +150,7 @@ header{
     max-width: 100%;
 }
 
-header h3{
+h3{
     color: var(--Main, #5d18ff);
     text-shadow: none;
     font-family: Poppins;
@@ -160,7 +160,7 @@ header h3{
     line-height: normal;
 }
 
-header h1{
+h1{
     color: #e1e1e1;
     text-shadow: 4px 4px 0px #5900FF;
     font-family: Silkscreen;
