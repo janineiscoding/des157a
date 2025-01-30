@@ -31,35 +31,19 @@ body{
     justify-self: center;
 }
 
-div{
-    color: #e1e1e1;
-    text-align: right;
-    text-shadow: 2px 2px 0px #5900FF;
-    font-family: Poppins;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-align: center;
-    padding: 21px 0;
-}
-
 header{
     position: relative;
     padding: 7% 5% 7% 5%;
-    border-top: 1px solid #e1e1e1;
     border-bottom: 1px solid #e1e1e1;
     position: relative;
+    width: 1200px;
 }
 
-header h3{
-    color: var(--Main, #5d18ff);
-    text-shadow: none;
-    font-family: Poppins;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
+main{
+    margin: 0 5%;
+    justify-content: space-between;
+    max-width: 800px;
+    justify-self: center;
 }
 
 header h1{
@@ -71,6 +55,7 @@ header h1{
     font-weight: 700;
     line-height: 1em;
     letter-spacing: -5px;
+    text-align: center;
 }
 
 p{
@@ -81,12 +66,15 @@ p{
     font-weight: 400;
     line-height: normal;
     text-align: start;
+    /* max-width: 800px; */
 }
 
-main{
-    margin: 50px 5% auto 5%;
-    display: flex;
-    justify-content: space-between;
+article p{
+    margin-bottom: 20px;
+}
+
+article{
+    padding: 50px 0;
 }
 
 h2{
@@ -106,6 +94,16 @@ h2{
     margin-bottom: 25px;
 }
 
+h3{
+    color: var(--Main, #e1e1e1);
+    text-shadow: 2px 2px 0px #5900FF;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
 ul{
     list-style-type: square;
     color:#e1e1e1;
@@ -118,8 +116,15 @@ a{
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 220%;
     text-decoration: underline;
+}
+
+a:hover{
+    text-shadow: 2px 2px 0px #5900FF;
+}
+
+ul li a{
+    line-height: 200%;
 }
 
 body div ul{
