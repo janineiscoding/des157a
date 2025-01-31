@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MadLib Code V1</title>
+
+    <!-- Normalize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">    
+    
+    <!-- Styles CSS -->
+    <link href="styles.css" rel="stylesheet">
+
 </head>
 <body>
-    
+    <main>
+        <h1>HI! CAN YOU HELP ME? -DENNY</h1>
+        <form action="processor.php" method="post">
+            <div>
+                <label for="plNoun">PLURAL NOUN</label>
+                <input type="text" name="plNoun" required>
+
+                <label for="lengths">UNIT OF LENGTH</label>
+                <select>
+                    <option value="">---</option>
+                    <option value="centimeters">centimeters</option>
+                    <option value="inches">inches</option>
+                    <option value="feet">feet</option>
+                    <option value="miles">miles</option>
+                </select>
+
+                <label for="year">YEAR</label>
+                <input type="text" name="year" required>
+                <p>ex. 2025, 1972, 857</p>
+
+                <label for="street">STREET</label>
+                <input type="text" name="street" required>
+
+                <label for="numbers">A NUMBER BETWEEN 1-30</label>
+                <input type="text" name="numbers" required>
+
+                <label for="body1">PART OF A BODY</label>
+                <input type="text" name="body1" required>
+            </div>
+
+            <div>
+            <label for="verb">VERB</label>
+            <input type="text" name="verb">
+
+            <label for="power">SUPERNATURAL POWER</label>
+            <input type="type" name="power">
+            <p>ex. teleportation, precognition</p>
+            </div>
+
+        </form>
+    </main>
 </body>
 </html>

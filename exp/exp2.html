@@ -16,12 +16,14 @@
         
     <!-- Styles CSS -->
     <link href="styles.css" rel="stylesheet">
+
 </head>
 
 <body>
     <div>
         <h1>Experiment 2</h1>
         <h2>"Cmd + Option + J" to open the console</h2>
+        <p>Ducks go </p>
     </div>
 
     <!-- <p>What sound does a duck make?</p> -->
@@ -29,25 +31,32 @@
     <script>
         // This program randomly changes the font size of each letter inputted. If the input is "quack," the text will be upper case.
         // Struggling to complete
-        var prompt = ("Enter a sound", "");
-        var text = "";
+        var sound = prompt("Enter a sound", "");
+        var size = 18;
 
         function ducks(){
-            var duckText = `Ducks go ${text}.`;
+            var duckText = `Ducks go ${sound}.`;
 
             // return duckText;
-            console.log(ducks);
+            console.log(duckText);
+
+            for(let i = 0; i < sound.length; i++){
+                // console.log(sound[i]);
+                document.querySelector('p').innerHTML += `<span style="font-size: ${size}px">${sound[i]}`;
+                size += 2;
+
+            }
         }
 
         ducks();
 
-        for(var i = 0; i < text.length; i++){
-            document.querySelector('p').style.fontSize = Math.random();
-            text[i];
-            if(text = "quack"){
-                text.toUpperCase;
-            }
-        }
+        // for(var i = 0; i < text.length; i++){
+        //     document.querySelector('p').style.fontSize = Math.random();
+        //     text[i];
+        //     if(text = "quack"){
+        //         text.toUpperCase;
+        //     }
+        // }
 
     </script>
 </body>
