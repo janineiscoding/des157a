@@ -116,7 +116,7 @@ a{
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    text-decoration: underline;
+    text-decoration: underline 1px;
 }
 
 a:hover{
