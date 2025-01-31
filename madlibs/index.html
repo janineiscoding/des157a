@@ -19,8 +19,10 @@
 
 </head>
 <body>
-    <main>
-        <h1>HI! CAN YOU HELP ME? -DENNY</h1>
+    <section class="form">
+        <header>
+            <h1>HI! CAN YOU HELP ME? -DENNY</h1>
+        </header>
         <form action="processor.php" method="post">
             <div>
                 <label for="plNoun">PLURAL NOUN</label>
@@ -51,14 +53,97 @@
 
             <div>
             <label for="verb">VERB</label>
-            <input type="text" name="verb">
+            <input type="text" name="verb" required>
 
             <label for="power">SUPERNATURAL POWER</label>
-            <input type="type" name="power">
+            <input type="type" name="power" required>
             <p>ex. teleportation, precognition</p>
-            </div>
 
+            <label for="noun">NOUN</label>
+            <input type="text" name="noun" required>
+
+            <label for="fruit">FRUIT</label>
+            <select required>
+                <option value="">---</option>
+                <option value="apple">apple</option>
+                <option value="cherry">cherry</option>
+                <option value="strawberry">strawberry</option>
+                <option value="orange">orange</option>
+                <option value="melon">orange</option>
+            </select>
+
+            <label for="body2">PART OF A BODY</label>
+            <select required>
+                <option value="">---</option>
+                <option value="skin">apple</option>
+                <option value="bones">cherry</option>
+                <option value="heart">strawberry</option>
+                <option value="liver">orange</option>
+            </select>
+
+            <label for="submit">SURE, TRY THESE!</label>
+            <input type="submit" name="submit" value="SEND WORDS">
+            </div>
         </form>
-    </main>
+    </section>
+
+    <section class="result">
+        <header>
+            <h1>DENNY</h1>
+            <p>Connoisseur of Ghostly Things</p>
+        </header>
+        <div>
+            <article>
+                <h2>EXPERIENCE</h2>
+                <h3>Arcade Game Phantom</h3>
+                <ul>
+                    <li>Improved haunting efficiency by 20% through innovated use of ()</li>
+                    <li>Floated an average of 16 () per guest visit</li>
+                    <li>Collaborated with 6 spirits and 2 undead to create the loudest scream since ()BCE</li>
+                </ul>
+            </article>
+
+            <article>
+                <h2>SKILLS</h2>
+                <ul>
+                    <li>Quick ()</li>
+                    <li>() Analysis</li>
+                    <li>()</li>
+                </ul>
+            </article>
+
+            <article>
+                <h2>TOOLS</h2>
+                <ul>
+                    <li>()</li>
+                    <li>()</li>
+                    <li>()</li>
+                </ul>
+            </article>
+
+            <article>
+                <h2>AWARDS</h2>
+                <ul>
+                    <li>Employee of the Month of October – Mansion Ghost at () Street</li>
+                </ul>
+            </article>
+        </div>
+        <aside>
+            <button>REJECT<img src="images/unhappy.svg"></button>
+            <button>HIRE<img src="images/happy.svg"></button>
+        </aside>
+    </section>
+
+    <section class="hire">
+        <h1>CONGRADUALITIONS,<br>DANNY!</h1>
+        <p>Welcome to the Pac-Team.</p>
+    </section>
+
+    <section class="reject">
+        <h1>Unfortunately...</h1>
+        <p>We have moved forward with another candidate.</p>
+        <p>Please apply again.</p>
+    </section>
+    
 </body>
 </html>
