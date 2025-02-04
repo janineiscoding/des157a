@@ -23,13 +23,13 @@
         <header>
             <h1>HI! CAN YOU HELP ME? -DENNY</h1>
         </header>
-        <form action="processor.php" method="post">
+        <form>
             <div>
                 <label for="plNoun">PLURAL NOUN</label>
-                <input type="text" name="plNoun" required>
+                <input type="text" id="plNoun" required>
 
                 <label for="lengths">UNIT OF LENGTH</label>
-                <select>
+                <select id="plNoun">
                     <option value="">---</option>
                     <option value="centimeters">centimeters</option>
                     <option value="inches">inches</option>
@@ -38,32 +38,32 @@
                 </select>
 
                 <label for="year">YEAR</label>
-                <input type="text" name="year" required>
+                <input type="text" id="year" required>
                 <p>ex. 2025, 1972, 857</p>
 
                 <label for="street">STREET</label>
-                <input type="text" name="street" required>
+                <input type="text" id="street" required>
 
                 <label for="numbers">A NUMBER BETWEEN 1-30</label>
-                <input type="text" name="numbers" required>
+                <input type="text" id="numbers" required>
 
                 <label for="body1">PART OF A BODY</label>
-                <input type="text" name="body1" required>
+                <input type="text" id="body1" required>
             </div>
 
             <div>
             <label for="verb">VERB</label>
-            <input type="text" name="verb" required>
+            <input type="text" id="verb" required>
 
             <label for="power">SUPERNATURAL POWER</label>
-            <input type="type" name="power" required>
+            <input type="type" id="power" required>
             <p>ex. teleportation, precognition</p>
 
             <label for="noun">NOUN</label>
-            <input type="text" name="noun" required>
+            <input type="text" id="noun" required>
 
             <label for="fruit">FRUIT</label>
-            <select required>
+            <select id="fruit" required>
                 <option value="">---</option>
                 <option value="apple">apple</option>
                 <option value="cherry">cherry</option>
@@ -73,7 +73,7 @@
             </select>
 
             <label for="body2">PART OF A BODY</label>
-            <select required>
+            <select id="body2" required>
                 <option value="">---</option>
                 <option value="skin">apple</option>
                 <option value="bones">cherry</option>
@@ -82,7 +82,7 @@
             </select>
 
             <label for="submit">SURE, TRY THESE!</label>
-            <input type="submit" name="submit" value="SEND WORDS">
+            <input type="submit" id="submit" value="SEND WORDS">
             </div>
         </form>
     </section>
