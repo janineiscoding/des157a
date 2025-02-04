@@ -24,6 +24,121 @@ a{
 
 /* Styling */
 
-input, label{
+body{
+    background: #151515;
+    width: 70%;
+    justify-self: center;
+}
+
+section{
+    background: #F8F8F8;
+    box-shadow: 10px 10px 0px 0px #5900FF;
+    padding: 39px 52px 0 52px;
+    /* separating the sections */
+    margin-bottom: 50px;
+}
+
+/* ––––––––––––––––– Form Page ––––––––––––––––– */
+
+form{
+    display: flex;
+    gap: 25%;
+}
+
+h1{
+    color: #202020;
+    font-family: Silkscreen;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -3px;
+}
+
+.question{
+    margin: 30px 0;
+}
+
+
+input, label, select{
     display: block;
+}
+
+label{
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+input, select{
+    color: #000;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 266px;
+    height: 40px;
+    flex-shrink: 0;
+    border: 1.336px solid #151515;
+    box-shadow: 1.336px 1.336px 0px 0px #5900FF;
+    padding-left: 10px;
+}
+
+p{
+    color: #000;
+    text-shadow: 1.336px 1.336px 5.344px rgba(0, 0, 0, 0.125);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#submit{
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: var(--Main, #5900FF);
+    box-shadow: 1.336px 1.336px 0px 0px #000;
+}
+
+/* ––––––––––––––––– Result Page ––––––––––––––––– */
+
+.result header{
+    text-align: center;
+}
+
+img{
+    position:absolute;
+    /* need to fix location */
+    opacity: 50%;
+}
+
+h2{
+    color: var(--Main, #5900FF);
+    font-family: Poppins;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.result > div{
+    display: flex;
+}
+
+aside{
+    display: flex;
+}
+
+button{
+    display: flex;
 }
