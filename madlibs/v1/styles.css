@@ -59,7 +59,6 @@ h1{
     margin: 30px 0;
 }
 
-
 input, label, select{
     display: block;
 }
@@ -116,8 +115,8 @@ p{
     text-align: center;
 }
 
-img{
-    position:absolute;
+.result header img{
+    position: absolute;
     /* need to fix location */
     opacity: 50%;
 }
@@ -141,4 +140,60 @@ aside{
 
 button{
     display: flex;
+    color: #000;
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 266px;
+    height: 46px;
+    flex-shrink: 0;
+    border: 1.559px solid var(--Main, #5900FF);
+    background: #FFF;
+    box-shadow: 1.039px 1.039px 0px 0px #151515;
+}
+
+/* ––––––––––––––––– Hire & Reject Page ––––––––––––––––– */
+
+.hire, .reject{
+    border: 5px solid #F8F8F8;
+    background: #151515;
+    box-shadow: 7px 7px 0px 0px #5900FF;
+    padding: 50px;
+    justify-items: center;
+}
+
+.hire h1, .reject h1, .hire p, .reject p{
+    text-align: center;
+}
+
+.hire h1, .reject h1{
+    color: #F8F8F8;
+    text-align: center;
+    text-shadow: 3px 3px 0px #5900FF;
+    font-family: Silkscreen;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 141%; /* 47.191px */
+    letter-spacing: -1.673px;
+    padding-bottom: 20px;
+}
+
+.hire p, .reject p{
+    color: #F8F8F8;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 28.8px */
+}
+
+.hire img, .reject img{
+    padding: 30px 0;
 }
