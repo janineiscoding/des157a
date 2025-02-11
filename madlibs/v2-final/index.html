@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadLib Code V1</title>
+
+    <!-- Normalize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">    
+    
+    <!-- Styles CSS -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- Styles JS -->
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    
+    <!-- Form Page -->
+
+    <section class="form">
+        <header>
+            <h1>HI! CAN YOU HELP ME? -PHANNY</h1>
+        </header>
+        <form>
+            <div>
+                <div class="question">
+                    <label for="plNoun">PLURAL NOUN</label>
+                    <input type="text" id="plNoun" required>
+                </div>
+
+                <div class="question">
+                    <label for="length">UNIT OF LENGTH</label>
+                    <select id="length">
+                        <option value="">---</option>
+                        <option value="centimeters">centimeters</option>
+                        <option value="inches">inches</option>
+                        <option value="feet">feet</option>
+                        <option value="miles">miles</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <label for="year">YEAR</label>
+                    <input type="text" id="year" required>
+                    <p>ex. 2025, 1972, 857</p>
+                </div>
+
+                <div class="question">
+                    <label for="street">STREET</label>
+                    <input type="text" id="street" required>
+                    <p>ex. A, Clement, James</p>
+                </div>
+
+                <div class="question">
+                    <label for="number">A NUMBER BETWEEN 1-30</label>
+                    <input type="text" id="number" required>
+                </div>
+
+                <div class="question">
+                    <label for="body1">PART OF A BODY</label>
+                    <input type="text" id="body1" required>
+                </div>
+            </div>
+
+            <div>
+                <div class="question">
+                    <label for="verb">VERB + ING</label>
+                    <input type="text" id="verb" required>
+                    <p>ex. painting, thinking, running</p>
+                </div>
+
+                <div class="question">
+                    <label for="power">SUPERNATURAL POWER</label>
+                    <input type="type" id="power" required>
+                    <p>ex. teleportation, precognition</p>
+                </div>
+
+                <div class="question">
+                    <label for="noun">NOUN</label>
+                    <input type="text" id="noun" required>
+                </div>
+
+                <div class="question">
+                    <label for="fruit">FRUIT</label>
+                    <select id="fruit" required>
+                        <option value="">---</option>
+                        <option value="apple">Apple</option>
+                        <option value="cherry">Cherry</option>
+                        <option value="strawberry">Strawberry</option>
+                        <option value="orange">Orange</option>
+                        <option value="melon">Melon</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <label for="body2">PART OF A BODY</label>
+                    <select id="body2" required>
+                        <option value="">---</option>
+                        <option value="skin">Skin</option>
+                        <option value="bones">Bones</option>
+                        <option value="heart">Heart</option>
+                        <option value="liver">Liver</option>
+                    </select>
+                </div>
+
+                <div class="submitDiv">
+                    <label for="submit">SURE, TRY THESE!</label>
+                    <input type="submit" id="submit" value="SEND WORDS">
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!-- Result Page -->
+
+    <section class="result">
+        <header>
+            <img src="images/photo.svg" alt="photo of Phanny">
+            <h1>PHANNY</h1> 
+            <p>Connoisseur of Ghostly Things</p>
+        </header>
+        <div>
+            <div class="experience">
+                <article>
+                    <h2>EXPERIENCE</h2>
+                    <h3>Arcade Game Phantom</h3>
+                    <ul>
+                        <li>Improved haunting efficiency by 20% through innovated use of <em class="plNounInsert"></em></li>
+                        <li>Floated an average of 16 <em class="lengthInsert"></em> per guest visit</li>
+                        <li>Collaborated with 6 spirits and 2 undead to create the loudest scream since <em class="yearInsert"></em> BCE</li>
+                    </ul>
+                    <h3>Mansion Ghost at <em class="streetInsert"></em></h3>
+                    <ul>
+                        <li>Conducted <em class="number1Insert"></em>-hour ghostly appearances to maintain to mansion’s haunted reputation over any weather</li>
+                        <li>Delivered <em class="body1Insert"></em>-chilling whispers with 92% guest scream rate and 65% jaw-drop rate</li>
+                        <li>Trained <em class="number2Insert"></em> junior ghosts in advanced, modern scare tactics and techniques</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="side-sections">
+                <article>
+                    <h2>SKILLS</h2>
+                    <ul>
+                        <li>Quick <em class="verbInsert"></em></li>
+                        <li><em class="powerInsert"></em> Analysis</li>
+                        <li><em class="nounInsert"></em></li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h2>TOOLS</h2>
+                    <ul>
+                        <li><em class="fruitInsert"></em></li>
+                        <li><em class="body2Insert"></em></li>
+                    </ul>
+                </article>
+
+                <article id="awards">
+                    <h2>AWARDS</h2>
+                    <ul>
+                        <li>Employee of the Month of October – Mansion Ghost at <em class="streetInsert"></em></li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+        <aside>
+            <button class="rejectBtn">REJECT<img src="images/sad.svg" alt="sad icon"></button>
+            <button class="hireBtn">HIRE<img src="images/happy.svg" alt="happy icon"></button>
+        </aside>
+    </section>
+
+    <!-- Hire and reject buttons -->
+
+    <section class="hire">
+        <h1>CONGRATULATIONS,<br>PHANNY!</h1>
+        <img src="images/pac-and-dots.svg" alt="pac and dots">
+        <p>Welcome to the Pac-Team.</p>
+    </section>
+
+    <section class="reject" >
+        <h1>Unfortunately...</h1>
+        <p>We have moved forward with another candidate.</p>
+        <img src="images/pac-and-dots.svg" alt="pac and dots">
+        <p>Please apply again.</p>
+    </section>
+    
+</body>
+</html>
