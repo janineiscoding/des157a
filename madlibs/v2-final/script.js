@@ -26,6 +26,7 @@
         const noun = document.querySelector('#noun').value;
         const fruit = document.querySelector('#fruit').value;
         const body2 = document.querySelector('#body2').value;
+        const number2 = Math.floor(number1 / 2);
 
 
         const plNounInsert = document.querySelector('.plNounInsert');
@@ -39,6 +40,8 @@
         const nounInsert = document.querySelector('.nounInsert');
         const fruitInsert = document.querySelector('.fruitInsert');
         const body2Insert = document.querySelector('.body2Insert');
+        const street2Insert = document.querySelector('.street2Insert');
+        const number2Insert = '';
 
 
 
@@ -63,7 +66,8 @@
             nounInsert.innerHTML = noun;
             fruitInsert.innerHTML = fruit;
             body2Insert.innerHTML = body2;
-            number2Insert.innerrHTML = number1 / 2;
+            number2Insert.innerrHTML = number2;
+            street2Insert.innerHTML = street;
         }
     });
 
