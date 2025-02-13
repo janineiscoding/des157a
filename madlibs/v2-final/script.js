@@ -28,7 +28,6 @@
         const body2 = document.querySelector('#body2').value;
         const number2 = Math.floor(number1 / 2);
 
-
         const plNounInsert = document.querySelector('.plNounInsert');
         const lengthInsert = document.querySelector('.lengthInsert');
         const yearInsert = document.querySelector('.yearInsert');
@@ -41,14 +40,16 @@
         const fruitInsert = document.querySelector('.fruitInsert');
         const body2Insert = document.querySelector('.body2Insert');
         const street2Insert = document.querySelector('.street2Insert');
-        const number2Insert = '';
+        const number2Insert = document.querySelector('.number2Insert');
 
 
 
-        if(plNoun === '' || length === '' || year === '' || street === ''){
+        if(plNoun === '' || length === '' || year === '' || street === '' || number1 === '' || body1 === '' || verb === '' || power === '' || noun === '' || fruit === '' || body2 === ''){
             formH1.innerHTML = 'Please fill all words! -PHANNY';
             document.querySelector('.form header h1').focus();
         } else {
+            // const number2Insert = number2;
+
             // move and show pages
             resultPage.style.setProperty('z-index', '6');
             resultPage.style.setProperty('opacity', '100%');
@@ -66,7 +67,7 @@
             nounInsert.innerHTML = noun;
             fruitInsert.innerHTML = fruit;
             body2Insert.innerHTML = body2;
-            number2Insert.innerrHTML = number2;
+            number2Insert.innerHTML = number2;
             street2Insert.innerHTML = street;
         }
     });
