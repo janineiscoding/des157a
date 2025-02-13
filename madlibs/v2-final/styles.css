@@ -246,8 +246,6 @@ button{
     display: flex;
     color: #000;
     text-align: center;
-    leading-trim: both;
-    text-edge: cap;
     font-family: Poppins;
     font-size: 18px;
     font-style: normal;
