@@ -58,15 +58,30 @@ header h1{
     text-align: center;
 }
 
-p{
+div{
+    padding: 10px 0;
+    justify-items: center;
+}
+
+p, figcaption{
     color: #e1e1e1;
     font-family: Poppins;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-align: start;
     /* max-width: 800px; */
+}
+
+figcaption{
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+img{
+    max-width: 350px;
+    max-height: 350px;
 }
 
 article p{
@@ -75,6 +90,7 @@ article p{
 
 article{
     padding: 50px 0;
+    justify-items: center;
 }
 
 h2{
