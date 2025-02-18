@@ -4,30 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experimentation</title>
+
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div>
-        <img src="images/chicken.png" width="525" height="700">
-        <figcaption>Janine, 2024</figcaption>
-        <p>Original</p>
-    </div>
+    <h2>Original</h2>
+    <section>
+        <div>
+            <img src="images/chicken.png" width="525" height="700" alt="chicken rice">
+            <figcaption>Janine, 2024</figcaption>
+        </div>
+    </section>
 
-    <div>
-        <img src="images/chicken.png" width="525" height="700">
-        <figcaption>Janine, 2024</figcaption>
-        <p>Filter 1</p>
-    </div>
+    <!-- 3D effect -->
+    <h2>3D Effect</h2>
+    <section class="third-dimention">
+        <div class="original">
+            <img src="images/chicken.png" width="525" height="700" alt="chicken rice">
+            <figcaption>Janine, 2024</figcaption>
+        </div>
 
-    <div>
-        <img src="images/chicken.png" width="525" height="700">
-        <figcaption>Janine, 2024</figcaption>
-        <p>Filter 2</p>
-    </div>
+        <div class="red">
+            <img src="images/chicken.png" width="525" height="700" alt="chicken rice">
+            <figcaption>Janine, 2024</figcaption>
+        </div>
 
-    <div>
-        <img src="images/chicken.png" width="525" height="700">
-        <figcaption>Janine, 2024</figcaption>
-        <p>Filter 3</p>
-    </div>
+        <div class="blue">
+            <img src="images/chicken.png" width="525" height="700" alt="chicken rice">
+            <figcaption>Janine, 2024</figcaption>
+        </div>
+    </section>
+
+    <!-- Masking -->
+    <h2>Masking</h2>
+    <section class="masking">
+        <div>
+            <img class="mask" src="images/chicken.png" width="525" height="700" alt="chicken rice">
+            <figcaption>Janine, 2024</figcaption>
+        </div>
+        <!-- Unsuccessful masking -->
+        <div>
+            <svg width="600" height="400">
+                <mask id="svgmask">
+                <polygon fill="#000000" points="100,10 40,198 190,78 10,78 160,198"></polygon>
+                </mask>
+                <image src="images/chicken.png" mask="url(#svgmask)" alt="chicken rice"></image>
+            </svg>
+            <p>Unsuccessful masking ^</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <h2>Filters</h2>
+    <section class="filters">
+        <div>
+            <img class="filter1" src="images/chicken.png" width="525" height="700" alt="chicken rice">
+            <!-- <figcaption>Janine, 2024</figcaption> -->
+        </div>
+
+        <div>
+            <img class="filter2" src="images/chicken.png" width="525" height="700" alt="chicken rice">
+            <!-- <figcaption>Janine, 2024</figcaption> -->
+        </div>
+
+        <div>
+            <img class="filter3" src="images/chicken.png" width="525" height="700" alt="chicken rice">
+            <!-- <figcaption>Janine, 2024</figcaption> -->
+        </div>
+    </section>
+
+    <section>
+        <div class="changeFilter">
+            <button class="button0">Original</button>
+            <button class="button1">Filter 1</button>
+            <button class="button2">Filter 2</button>
+            <button class="button3">Filter 3</button>
+            <img src="images/chicken.png" width="525" height="700" alt="chicken rice">
+            <figcaption>Janine, 2024</figcaption>
+        </div>
+    </section>
+
 </body>
 </html>

@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box;
+}
+
+nav ul, nav ol{
+    list-style-type: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, p, ul, ol{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Styling */
+
+body{
+    justify-items: center;
+}
+
+section{
+    margin: 50px 0;
+    position: relative;
+}
+
+img{
+    max-height: 500px;
+    width: auto;
+}
+
+.third-dimention{
+    display: flex;
+}
+
+.red {
+    background-color: rgb(255, 164, 164);
+    opacity: 40%;
+    position: absolute;
+
+    right: -10px;
+}
+  
+.red img {
+    mix-blend-mode: color-burn;
+}
+
+.blue {
+    background-color: rgb(164, 240, 255);
+    opacity: 40%;
+    position: absolute;
+    left: -10px;
+}
+  
+.blue img {
+    mix-blend-mode: color-burn;
+}
+
+.masking{
+    display: flex;
+}
+
+.mask {
+    -webkit-mask-image: url(images/chicken.png);
+    mask-image: url(images/send-icon.svg);
+    mask-repeat: no-repeat;
+}
+
+.filters{
+    display: flex;
+    gap: 20px;
+}
+
+.filters div img{
+    max-height: 100px;
+}
+
+.nofilter {
+    filter: none;
+}
+
+.filter1 {
+    filter: saturate(0%) contrast(250%);
+}
+
+.filter2 {
+    filter: saturate(300%) hue-rotate(180deg);
+}
+
+.filter3 {
+    filter: sepia(200%) drop-shadow(10px 10px 0px #dd7a44) blur(2px);
+}
+
+figcaption{
+    background: white;
+}
