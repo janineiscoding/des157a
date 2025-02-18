@@ -74,6 +74,18 @@ img{
     mask-repeat: no-repeat;
 }
 
+.mask3{
+    background: url(images/chicken.png) no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 100px;
+    font-weight: 600;
+}
+
+.mask5{
+    clip-path: circle(150px at center);
+}
+
 .filters{
     display: flex;
     gap: 20px;

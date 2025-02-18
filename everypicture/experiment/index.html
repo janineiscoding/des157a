@@ -43,16 +43,43 @@
             <img class="mask" src="images/chicken.png" width="525" height="700" alt="chicken rice">
             <figcaption>Janine, 2024</figcaption>
         </div>
-        <!-- Unsuccessful masking -->
+        
         <div>
+            <!-- Unsuccessful masking -->
             <svg width="600" height="400">
                 <mask id="svgmask">
                 <polygon fill="#000000" points="100,10 40,198 190,78 10,78 160,198"></polygon>
                 </mask>
-                <image src="images/chicken.png" mask="url(#svgmask)" alt="chicken rice"></image>
+                <image href="images/chicken.png" mask="url(#svgmask)" alt="chicken rice"></image>
             </svg>
             <p>Unsuccessful masking ^</p>
         </div>
+
+        <div class="mask3">
+            <p>Hello!</p>
+            <p>Mask Text</p>
+        </div>
+    </section>
+    <section class="masking">
+        <div class="mask4">
+            <!-- Unsuccessful masking -->
+            <svg>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V956H1146V0H0ZM802 350H427V725H802V350Z" fill="url(#pattern0_220_60)"/>
+                <defs>
+                    <pattern id="pattern0_220_60" patternContentUnits="objectBoundingBox" width="1" height="1">
+                        <use xlink:href="#image0_220_60" transform="matrix(0 -0.00104603 0.0008726 0 -0.111693 1)"/>
+                    </pattern>  
+                    <image id="image0_220_60" width="956" height="1274" href="images/chicken.png"></image>
+                </defs>
+            </svg>
+        </div>
+        <p>Unsuccessful masking (left)</p>
+
+        <div class="mask5">
+            <img src="images/chicken.png" width="525" height="700" alt="chicken rice">
+            <figcaption>Janine, 2024</figcaption>
+        </div>
+        <p>Click circle</p>
     </section>
 
     <!-- Filters -->
