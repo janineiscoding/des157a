@@ -69,9 +69,16 @@ img{
 }
 
 .mask {
-    -webkit-mask-image: url(images/chicken.png);
+    /* -webkit-mask-image: url(images/chicken.png); */
     mask-image: url(images/send-icon.svg);
     mask-repeat: no-repeat;
+    position: relative;
+    left: 0;
+    transition: all 1s;
+}
+
+.mask:hover{
+    left: 200px;
 }
 
 .mask3{
