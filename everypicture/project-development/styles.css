@@ -50,7 +50,7 @@ header h1{
     color: #e1e1e1;
     text-shadow: 4px 4px 0px #5900FF;
     font-family: Silkscreen;
-    font-size: 65px;
+    font-size: 55px;
     font-style: normal;
     font-weight: 700;
     line-height: 1em;
@@ -60,7 +60,11 @@ header h1{
 
 div{
     padding: 10px 0;
-    justify-items: center;
+    justify-self: center;
+}
+
+div ul{
+    margin-left: 30px;
 }
 
 p, figcaption{
@@ -71,7 +75,6 @@ p, figcaption{
     font-weight: 400;
     line-height: normal;
     text-align: start;
-    /* max-width: 800px; */
 }
 
 figcaption{
@@ -80,12 +83,24 @@ figcaption{
 }
 
 img{
-    max-width: 350px;
-    max-height: 350px;
+    max-width: 800px;
+    max-height: 800px;
+    border: #e1e1e1 solid 1px;
+    box-shadow: 8px 8px 0px #5900FF;
+    margin: 25px;
 }
 
-article p{
+ul{
     margin-bottom: 20px;
+}
+
+ li{
+    color: #e1e1e1;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 article{
@@ -140,11 +155,6 @@ a:hover{
 
 ul li a{
     line-height: 200%;
-}
-
-body div ul{
-    display: flex;
-    justify-content: space-evenly;
 }
 
 .square{
