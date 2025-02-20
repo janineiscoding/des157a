@@ -1,0 +1,143 @@
+/* Reset */
+*{
+    box-sizing: border-box;
+}
+
+nav ul, nav ol{
+    list-style-type: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, p, ul, ol{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Styling */
+body{
+    background: #181818;
+    position: relative;
+    height: 100vh;
+    max-width: 1200px;
+    justify-self: center;
+}
+
+div p{
+    margin: 15px 0;
+}
+
+div{
+    color: #e1e1e1;
+    text-align: right;
+    text-shadow: 2px 2px 0px #5900FF;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+}
+
+h3{
+    color: var(--Main, #5d18ff);
+    text-shadow: none;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+h1{
+    color: #e1e1e1;
+    text-shadow: 4px 4px 0px #5900FF;
+    font-family: Silkscreen;
+    font-size: 78.68px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1em;
+    letter-spacing: -5px;
+    margin-bottom: 20px;
+}
+
+main{
+    margin: 50px 20px auto 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+p{
+    color: #e1e1e1;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: end;
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+}
+
+section h2{
+    display: inline-flex;
+    padding: 4px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--Main, #5900FF);
+    box-shadow: 3px 3px 0px 0px #FFF, 4px 4px 0px 0px #3A00A7 inset;
+    color: #e1e1e1;
+    font-family: "Silkscreen";
+    font-size: 23.085px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+ul{
+    list-style-type: square;
+    color:#e1e1e1;
+    padding-left: 15px;
+}
+
+section ul li a{
+    color: #e1e1e1;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 220%;
+}
+
+body div ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header p{
+    color: #e1e1e1;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    align-self: center;
+}
+
+header p{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
