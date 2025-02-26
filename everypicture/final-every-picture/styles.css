@@ -1,0 +1,203 @@
+/* Reset */
+*{
+    box-sizing: border-box;
+}
+
+nav ul, nav ol{
+    list-style-type: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, p, ul, ol{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    border: none;
+}
+
+/* ––––––––––––––––– Z-Index ––––––––––––––––– */
+
+.main-page{
+    position: absolute;
+    z-index: 5;
+    opacity: 100%;
+}
+
+.dumpling-page{
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+}
+
+.filter-page{
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+}
+
+/* ––––––––––––––––– Styling ––––––––––––––––– */
+
+body{
+    background: #151515;
+    justify-self: center;
+    width: 1200px;
+    position: relative;
+}
+
+section{
+    background-color: #151515;
+}
+
+/* ––––––––––––––––– Main Page ––––––––––––––––– */
+
+.main-page{
+    display: flex;
+    justify-self: center;
+}
+
+.menu, .chat, .polaroid{
+    background: #F8F8F8;
+    box-shadow: 8px 8px 0px 0px #5900FF;
+    padding: 15px 25px;
+}
+.menu{
+    width: 470px;
+    height: 601px;
+    justify-self: end;
+    align-self: center;
+    margin: 6% 6% 6% 4%;
+    position: relative;
+}
+
+.top-leaf{
+    transform: rotate(40deg);
+    top: -50px;
+    left: -50px;
+    transform: scaleX(-1);
+    filter: drop-shadow(-7px 2px 0px #5900FF);
+    position: absolute;
+}
+
+.bottom-leaf{
+    filter: drop-shadow(5px 5px 0px #5900FF);
+    position: absolute;
+    bottom: -28px;
+    right: -56px;
+}
+
+.main-page .chat {
+    width: 700px;
+    height: 120px;
+    margin: 6% 0 6% 6%;
+    align-self: end;
+}
+
+h1{
+    color: #F8F8F8;
+    text-shadow: 5px 5px 0px #5900FF;
+    -webkit-text-stroke: 5px #000000;
+    font-family: Silkscreen;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1.2px;
+    text-align: center;
+}
+
+h2{
+    color: #151515;
+    font-family: Silkscreen;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -2.1px;
+}
+
+h3{
+    color: var(--Main, #5900FF);
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+p{
+    color: #000;
+    text-shadow: 1.336px 1.336px 5.344px rgba(0, 0, 0, 0.125);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 5px;
+}
+
+article:hover h3{
+    text-shadow: 3px 3px 0px #FF9900;
+}
+
+/* ––––––––––––––––– Food Pages ––––––––––––––––– */
+
+/* Dumplings */
+
+.dumpling-page{
+    width: 1200px;
+    height: 750px;
+    background-image: url("images/dumplings.png");
+    background-repeat: no-repeat;
+    background-position: 50px;
+}
+
+.dumpling-page .chat{
+    width: 1000px;
+    justify-self: center;
+    margin-top: 520px;
+}
+
+button{
+    display: flex;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color:#F8F8F8;
+    width: 220px;
+    height: 42px;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--Main, #5900FF);
+    justify-self: end;
+}
+
+button img{
+    width: 18px;
+}
+
+/* ––––––––––––––––– Hire & Reject Page ––––––––––––––––– */
+
+
+
+/* ––––––––––––––––– Media Query ––––––––––––––––– */
+@media only screen and (min-height: 751px) {
+    body {
+      margin-top: 6%;
+    }
+  }
