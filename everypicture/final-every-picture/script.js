@@ -2,25 +2,29 @@
     'use strict';
     console.log('reading js');
 
-    const coffee1 = document.querySelector('.coffee1');
+    const dumplingOption = document.querySelector('.dumpling-menu');
     const dumplingPage = document.querySelector('.dumpling-page');
     const mainPage = document.querySelector('.main-page');
-    const filterPage = document.querySelector('.filter-page');
-    const pictureBtn = document.querySelector('button');
+    const dumplingFilter = document.querySelector('.dumpling-page .filter-page');
+    const takeDumplingPic = document.querySelector('.dumpling-page .chat button');
+    const sectionTag = document.querySelector('section');
 
-    coffee1.addEventListener('click', function(){
+    dumplingOption.addEventListener('click', function(){
         dumplingPage.style.zIndex = 5;
         dumplingPage.style.opacity = '100%';
         mainPage.style.zIndex = 0;
         mainPage.style.opacity = 0;
     });
 
-    pictureBtn.addEventListener('click', function(){
-        filterPage.style.zIndex = 5;
-        filterPage.style.opacity = '100%';
-        dumplingPage.style.zIndex = 0;
-        dumplingPage.style.opacity = 0;
+    takeDumplingPic.addEventListener('click', function(){
+        dumplingPage.style.opacity = '50%';
+        dumplingFilter.style.zIndex = 10;
+        dumplingFilter.style.opacity = '100%';
+        // dumplingPage.style.zIndex = 0;
+        // dumplingPage.style.opacity = 0;
     });
+
+
 
 
 })();
