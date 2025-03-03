@@ -98,11 +98,11 @@ section{
 }
 
 .menu{
-    width: 470px;
+    width: 490px;
     height: 601px;
     justify-self: end;
     align-self: center;
-    margin: 6% 6% 6% 4%;
+    margin: 6% 7% 6% 4%;
     position: relative;
 }
 
@@ -173,9 +173,14 @@ p{
     margin: 5px;
 }
 
+.crepe-menu, .dumpling-menu, .hotpot-menu{
+    display: flex;
+    gap: 20px;
+}
+
 .crepe-menu p, .dumpling-menu p, .hotpot-menu p{
     margin: 0;
-    width: 250px;
+    width: 230px;
 }
 
 .crepe-menu h3, .dumpling-menu h3, .hotpot-menu h3{
@@ -183,11 +188,17 @@ p{
 }
 
 article{
-    padding: 35px 0;
+    margin: 30px 0;
+    padding: 10px 0;
 }
 
 article:hover h3{
-    text-shadow: 3px 3px 0px #FF9900;
+    text-shadow: 2px 2px 0px #FF9900;
+}
+
+article:hover img{
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px #FF9900;
 }
 
 .black-overlay{
