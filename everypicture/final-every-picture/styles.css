@@ -48,6 +48,12 @@ button{
     display: none;
 }
 
+.crepe-page{
+    position: absolute;
+    z-index: 1;
+    display: none;
+}
+
 .filter-page{
     position: absolute;
     z-index: 0;
@@ -81,7 +87,7 @@ section{
     padding: 15px 25px;
 }
 
-.dumpling-polaroid, .hotpot-polaroid{
+.dumpling-polaroid, .hotpot-polaroid, .crepe-polaroid{
     background: #F8F8F8;
     box-shadow: 8px 8px 0px 0px #5900FF;
     padding: 25px 25px;
@@ -189,7 +195,7 @@ article:hover h3{
     height: 100vh;
     background-color: #00000090;
     backdrop-filter: blur(4px);
-    display: none;
+    display: block;
     left: 0;
     right: 0;
 }
@@ -212,8 +218,14 @@ article:hover h3{
     background-repeat: no-repeat;
 }
 
+.crepe-page{
+    width: 1200px;
+    height: 750px;
+    background-image: url("images/crepe.jpg");
+    background-repeat: no-repeat;
+}
+
 .filter-page{
-    /* position: relative; */
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
@@ -259,7 +271,6 @@ button img{
 .filters li{
     width: 84px;
     height: 84px;
-    /* flex-shrink: 0; */
     background-color: #F8F8F8;
     box-shadow: 6px 6px 0px 0px #F90;
     padding: 7px;
@@ -295,6 +306,7 @@ li div{
     position: absolute;
     right: 9.5%;
     bottom: 8%;
+    cursor:pointer;
 }
 
 
