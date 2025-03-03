@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-nav ul, nav ol{
+nav ul, nav ol, li{
     list-style-type: none;
 }
 
@@ -39,19 +39,19 @@ button{
 .dumpling-page{
     position: absolute;
     z-index: 2;
-    opacity: 0;
+    display: none;
 }
 
 .hotpot-page{
     position: absolute;
     z-index: 3;
-    opacity: 0;
+    display: none;
 }
 
 .filter-page{
     position: absolute;
     z-index: 0;
-    opacity: 0;
+    display: none;
 }
 
 /* ––––––––––––––––– Styling ––––––––––––––––– */
@@ -81,10 +81,14 @@ section{
     padding: 15px 25px;
 }
 
-.dumpling-polaroid {
+.dumpling-polaroid, .hotpot-polaroid{
     background: #F8F8F8;
     box-shadow: 8px 8px 0px 0px #5900FF;
     padding: 25px 25px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
 }
 
 .menu{
@@ -180,6 +184,16 @@ article:hover h3{
     text-shadow: 3px 3px 0px #FF9900;
 }
 
+.black-overlay{
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000090;
+    backdrop-filter: blur(4px);
+    display: none;
+    left: 0;
+    right: 0;
+}
+
 /* ––––––––––––––––– Food Pages ––––––––––––––––– */
 
 /* Dumplings */
@@ -191,13 +205,21 @@ article:hover h3{
     background-repeat: no-repeat;
 }
 
-.filter-page{
-    position: absolute;
-    left: 27%;
-    top: 8%;
+.hotpot-page{
+    width: 1200px;
+    height: 750px;
+    background-image: url("images/hotpot.jpg");
+    background-repeat: no-repeat;
 }
 
-.dumpling-page .chat{
+.filter-page{
+    /* position: relative; */
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.chat{
     width: 1000px;
     justify-self: center;
     margin-top: 520px;
@@ -226,17 +248,54 @@ button img{
     width: 18px;
 }
 
-/* Hot Pot */
-
-.hotpot-page{
-    width: 1200px;
-    height: 750px;
-    background-image: url("images/hotpot.jpg");
-    background-repeat: no-repeat;
+/* ––––––––––––––––– Filter Options ––––––––––––––––– */
+.filters{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 35%;
+    right: 14%;
 }
 
-/* ––––––––––––––––– Hire & Reject Page ––––––––––––––––– */
+.filters li{
+    width: 84px;
+    height: 84px;
+    /* flex-shrink: 0; */
+    background-color: #F8F8F8;
+    box-shadow: 6px 6px 0px 0px #F90;
+    padding: 7px;
+    margin-bottom: 20px;
+}
 
+li div{
+    width: 70px;
+    height: 70px;
+}
+
+.sat-option{
+    background: linear-gradient(180deg, #F00 33%, #0F1 33%, #0F1 66%, #2F00FF 66%);
+}
+
+.weird-option{
+    background: linear-gradient(to bottom right, #FF4B2F 31%, #23BC47 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #FF4B2F 31%, #23BC47 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #FF4B2F 31%, #23BC47 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #FF4B2F 31%, #23BC47 50%) top right / 50% 50% no-repeat;
+}
+
+.purple-option{
+    background: conic-gradient(from 180deg at 50% 50%, #A676FF 0deg, #5900FF 183.59999656677246deg, #140039 360deg);
+}
+
+.gradient-option{
+    background: linear-gradient(135deg, #FFE7B2 0.32%, #6919FF 100.68%);
+}
+
+.done{
+    color: #000000;
+    background-color: #FF9900;
+    width: 179px;
+    height: 45px;
+    position: absolute;
+    right: 9.5%;
+    bottom: 8%;
+}
 
 
 /* ––––––––––––––––– Media Query ––––––––––––––––– */
