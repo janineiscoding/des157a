@@ -27,10 +27,7 @@
         dumplingFilter.style.zIndex = 10;
         overlay.style.zIndex = 9;
         overlay.style.display = 'block';
-        // dumplingFilter.style.opacity = '100%';
         dumplingFilter.style.display = 'block';
-        // dumplingPage.style.zIndex = 0;
-        // dumplingPage.style.opacity = 0;
     });
 
     // Hot pot option on menu & take photo
