@@ -1,25 +1,53 @@
-body {
-    font-family: Arial;
-    color: #333;
-    padding: 50px;
-    line-height: 1.5em;
+/* Reset */
+*{
+    box-sizing: border-box;
 }
 
-button { 
-    padding: 10px;
+nav ul, nav ol{
+    list-style-type: none;
 }
 
-div {
-    padding: 20px;
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-#gamecontrol, #score {
-    background-color: aliceblue;
+h1, h2, h3, p, ul, ol{
+    margin: 0;
+    padding: 0;
 }
 
-#game {
-    background-color:#eaeaea;
+a{
+    text-decoration: none;
 }
-#actions {
-    background-color: silver;
+
+/* Styling */
+
+body{
+    background: #181818;
+    justify-self: center;
+}
+
+h1{
+    color: #e1e1e1;
+    text-shadow: 4px 4px 0px #5900FF;
+    font-family: Silkscreen;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1em;
+    letter-spacing: -5px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+p{
+    color: #e1e1e1;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: start;
 }

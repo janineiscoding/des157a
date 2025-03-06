@@ -9,8 +9,8 @@
     const actionArea = document.querySelector('#actions');    
 
     const gameData = {
-        dice: ['1die.jpg', '2die.jpg', '3die.jpg', 
-               '4die.jpg', '5die.jpg', '6die.jpg'],
+        dice: ['1die.svg', '2die.svg', '3die.svg', 
+               '4die.svg', '5die.svg', '6die.svg'],
         players: ['player 1', 'player 2'],
         score: [0, 0],
         roll1: 0,
@@ -80,7 +80,7 @@
         else if (gameData.roll1 === 1 || gameData.roll2 === 1){
             console.log('one of the two dice rolled is a 1');
             gameData.index ? (gameData.index = 0) : (gameData.index = 1);
-            game.innerHTML += `<p>Sorry, one of you rolls was a one, switching to ${gameData.players[gameData.index = 1]}</p>`;
+            game.innerHTML += `<p>Boom! Switching to ${gameData.players[gameData.index = 1]}</p>`;
 
             // wait 2 seconds
             setTimeout(setUpTurn, 2000);
@@ -127,5 +127,38 @@
         ${gameData.score[0]}</strong> and <strong>${gameData.players[1]}: 
         ${gameData.score[1]}</strong></p>`;
     }
+
+
+    // WASD and arrow pressed
+    const keyTag = document.querySelector('.key');
+
+    document.onkeydown = function (e) {
+        switch (e.key) {
+            case 'ArrowUp':
+                console.log("arrow up");
+                keyTag.innerHTML = "arrow up pressed";
+                break;
+            case 'ArrowDown':
+                console.log("arrow down");
+                break;
+            case 'ArrowLeft':
+                console.log("arrow left");
+                break;
+            case 'ArrowRight':
+                console.log("arrow right");
+                break;
+            case "w":
+                console.log("w key");
+                break;
+            case 'a':
+                console.log("a key");
+                break;
+            case 's':
+                console.log("s key");
+                break;
+            case 'd':
+                console.log("d key");
+        }
+    };
 
 })();
