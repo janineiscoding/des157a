@@ -1,8 +1,67 @@
+/* Reset */
+*{
+    box-sizing: border-box;
+}
+
+nav ul, nav ol, li{
+    list-style-type: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, p, ul, ol{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    border: none;
+}
+
+/* My Styles */
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: #333;
-    background-color: bisque;
+    background-image: url("images/ghost-bg.png");
+    background-repeat: no-repeat;
+    background-position: center 10px;
+    background-color: #121212;
+    width: 1200px;
+    height: 750px;
+    justify-self: center;
+    /* align-content: center; */
+}
+
+h1, h2, h3{
+    color: #e1e1e1;
+    text-shadow: 4px 4px 0px #5900FF;
+    font-family: Silkscreen;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1em;
+    letter-spacing: -5px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+p{
+    color: #e1e1e1;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
 }
 
 #score span {
@@ -47,5 +106,3 @@ body {
     color: #333;
     font-weight: bold;
 }
-
-

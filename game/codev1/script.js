@@ -144,9 +144,7 @@
     }
 
     
-    button here(){
-        runSequence();
-    }
+
     // manual sequence, bad syntax but it works?
     function runSequence(){
         document.addEventListener('keydown', function(e) {
