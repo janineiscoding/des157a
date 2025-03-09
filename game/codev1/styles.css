@@ -29,7 +29,16 @@ body{
     justify-self: center;
 }
 
-h1{
+li{
+    display: flex;
+    gap: 5px;
+}
+
+li img{
+    width: 16px;
+}
+
+h1, h2, h3{
     color: #e1e1e1;
     text-shadow: 4px 4px 0px #5900FF;
     font-family: Silkscreen;

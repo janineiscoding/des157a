@@ -22,9 +22,12 @@
 </head>
 <body>
     <h1>GAME OF PAC</h1>
-    <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a "one". If this happens, this player's turn is over, and it is the other player’s turn. After each roll, the current player can either roll again, (assuming a "one" was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins.</p> 
-    <p>Oh, and if you roll two "ones" (snake eyes), your current score gets zeroed out. So don’t do that.</p>
-
+    <p>Match the sequence using WASD or arrows to roll the dice. The total of the roll is added to the current player's score and the first player to get 30 points or higher wins!</p> 
+    <ul>Additional Rules:</ul>
+        <li><p>If either die is a bomb &#40</p><img src="images/1die.svg" alt="one dice"><p>&#41 , you get a boom and will have 2 points deducted.</p> </li>
+        <li><p>If either player rolls a cherry bomb &#40</p><img src="images/1die.svg" alt="one dice"><img src="images/1die.svg" alt="one dice"><p>&#41 , both players' score return to 0.</li>
+    </ul>
+   <p>Good Luck!</p>
     <div id="gamecontrol">
         <h2>Start a Game</h2>
         <button id="startgame">Randomly Pick the First Player, and Start the Game</button>
@@ -34,7 +37,8 @@
     <div id="actions"></div>
     <div id="score"></div>
 
-    <p class="key"></p>
+    <p class="letters"></p>
+    <p class="arrows"></p>
     
 </body>
 </html>
