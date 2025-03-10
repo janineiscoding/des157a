@@ -80,10 +80,9 @@ p{
     transition: all 500ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
 }
 
-#pad1 { background-color: #9703215b;}
-#pad2 { background-color: #05057b65;}
-#pad3 { background-color: #b59f0d56;}
-#pad4 { background-color: #154d255c;}
+svg{
+    fill: #5900FF;
+}
 
 #game div:hover {
     cursor: pointer;

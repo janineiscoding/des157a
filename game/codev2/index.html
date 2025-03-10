@@ -24,10 +24,34 @@
     <h1>Game Of Pac</h1>
     <p id="score">Current Score: <span>0</span></p>
     <section id="game">
-        <div id="pad1">w</div>
-        <div id="pad2">a</div>
-        <div id="pad3">s</div>
-        <div id="pad4">d</div>
+        <div id="pad1">
+            <p>W</p>
+            <!-- SVG to allow color change -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="44" viewBox="0 0 60 44" fill="none">
+                <path d="M0 44L30 0L60 44H0Z"/>
+            </svg>
+        </div>
+        <div id="pad2">
+            <p>A</p>
+            <!-- SVG to allow color change -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <path d="M52 0L52 60L8 30L52 0Z"/>
+            </svg>
+        </div>
+        <div id="pad3">
+            <p>S</p>
+            <!-- SVG to allow color change -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <path d="M0 8H60L30 52L0 8Z"/>
+            </svg>
+        </div>
+        <div id="pad4">
+            <p>D</p>
+            <!-- SVG to allow color change -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="60" viewBox="0 0 44 60" fill="none">
+                <path d="M0 60L-2.62268e-06 0L44 30L0 60Z"/>
+            </svg>
+        </div>
     </section>
     <p id="message">Click the start game button to start</p>
     <p id="action"><a href="#">Start Game</a></p> 

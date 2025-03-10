@@ -79,7 +79,7 @@
                 }, sequenceSpeed);
                 console.log(gameData.sequence);
             }
-       }, 300);
+       }, 600);
     }
 
     /* This is the function that captures responses from the user, and
@@ -194,7 +194,7 @@
         /* This replaces all the pads with new ones. This is necessary otherwise the old pads will
         get additional event listeners added to them in the captureResponse() function. There is the added
         benefit of not having event listeners on the pads during the callSequence phase of the game. */
-        game.innerHTML = '<div id="pad1"></div><div id="pad2"></div><div id="pad3"></div><div id="pad4"></div>';
+        game.innerHTML = '<div id="pad1"> <p>W</p> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="44" viewBox="0 0 60 44" fill="none"><path d="M0 44L30 0L60 44H0Z"/></svg></div>             <div id="pad2"> <p>A</p> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M52 0L52 60L8 30L52 0Z"/></svg></div>             <div id="pad3"> <p>S</p> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M0 8H60L30 52L0 8Z"/></svg></div>             <div id="pad4"> <p>D</p> <svg xmlns="http://www.w3.org/2000/svg" width="44" height="60" viewBox="0 0 44 60" fill="none"><path d="M0 60L-2.62268e-06 0L44 30L0 60Z"/></svg></div>';
 
         /* This event listener kicks off the start of the next callSequence function and continues 
         the game. */
@@ -228,7 +228,7 @@
         roll2: 0,
         rollSum: 0,
         index: 0,
-        gameEnd: 5
+        gameEnd: 29
     };
 
     function throwDice() {
