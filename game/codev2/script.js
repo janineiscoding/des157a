@@ -5,7 +5,7 @@
     // variables for interface elements
     const bttn = document.querySelector('#action a');
     const game = document.querySelector('#game');
-    const message = document.querySelector('#message');
+    const message = document.querySelector('.score-box #message');
     const action = document.querySelector('#action');
     const currentScore = document.querySelector('#score span');
     /* The variable below uses let because these elements are going to be
@@ -14,13 +14,14 @@
     let pads = document.querySelectorAll('#game div');
     //counter is used to determine if we are done with the sequence
     let counter = 0;
+    let status = 0;
 
     // object keeps track of data within the game
     const gameData = {
         count: 3,
         increment: 3,
         score: 0,
-        speed: 1000,
+        speed: 500,
         sequence: [0, 0, 0],
         match: [1, 1, 1]
     }
@@ -29,7 +30,13 @@
     bttn.addEventListener('click', function(event){
         event.preventDefault();
         gameData.sequence = [];
+        // glenda added to reset the match array
+        gameData.match = [];
+        // console.log(gameData.match);
         callSequence(gameData.count, gameData.speed);
+        // from glenda: once the game play is started I think the instructions and button should be removed because they get in the way of focusing on the sequence
+        message.innerHTML = '';
+        bttn.innerHTML = 'Match the pattern';
     });
 
     // A recursive function for creating the call sequence
@@ -63,7 +70,6 @@
                     }
                     callSequence(sequenceLength, sequenceSpeed);
                 }, sequenceSpeed);
-                
             }
 
             /* If the sequence is complete, wait the programmed amount of
@@ -75,6 +81,7 @@
                         eachPad.removeAttribute('class');
                     }
                     gameData.match = [];
+
                     captureResponse();
                 }, sequenceSpeed);
                 console.log(gameData.sequence);
@@ -86,110 +93,97 @@
     checks to see if they have pressed the pads in the correct order. */
     function captureResponse(){
         action.innerHTML = '';
-        message.innerHTML = 'Can you match the pattern?'
+        // message.innerHTML = 'Can you match the pattern?'
         /* The status variable is used to check the status of the game. Should it
         continue, or should it end because the player got the pattern wrong? */
-        let status = 0;
-
-
-
-
-        document.addEventListener('keydown', function(event){
-            let id = '';
-
-            if (event.key === 'w') {
-                // console.log('w key');
-                id = 'pad1';
-            }
-            if (event.key === 'a') {
-                // console.log('a key');
-                id = 'pad2';
-            }
-            if (event.key === 's') {
-                // console.log('s key');
-                id = 'pad3';
-            }
-            if (event.key === 'd') {
-                // console.log('d key');
-                id = 'pad4';
-            }
-
-
-
-            // looping through the array of pads...
-            // for( const eachPad of pads){
-            // add an event listener to each pad
-            // eachPad.addEventListener('keydown', function(event){
-
-                //when the player clicks a pad, get it's ID and update it's class so it animates
-
-                // commented out animation
-                // event.target.className = 'on';
-                //after the animation has completed, remove the 'on' class from that pad.
-                // setTimeout(function(){
-                //     event.target.removeAttribute('class');
-                // }, 1000);
-
-
-
-                /* The following line pulls out the number at the end of the ID for the
-                pad that was clicked (charAt()), converts it into an integer (parseInt()) 
-                Then pushes it into the gameData.match array (push())*/
-                gameData.match.push(parseInt(id.charAt(3)));
-
-                /* This if statement checks to see if the length of the two
-                arrays is the same */ 
-                if( gameData.match.length == gameData.sequence.length){
-                    console.log(gameData.match);
-                    /* This loops through the match array and checks
-                    to see if each element matches the corresponding element in the 
-                    sequence array. */
-                    for( let i=0; i<gameData.match.length; i++){
-                        /* if any of the elements in the array do not match, then status
-                        is set to zero and the player loses the game */
-                        if( gameData.match[i] != gameData.sequence[i]){
-                            status = 0;
-                            message.innerHTML = "Sorry you lose. Better luck next time!";
-                        }
-                        /* If none of the matches in the loop trigger an error, status
-                        is set to 1 and that value will be used to continue the game */
-                        else {
-                            status = 1;
-                        }
-                    }
-                    //this only runs if the game continues...
-                    if(status){
-                        /* settimeOut is used here just to provide a little time for the game to continue.SetupNextRound sets up the game for the next sequence*/
-                        setTimeout(setupNextRound, 2000);
-                    }
-                }
-        });
-                
-            // });
-        // }
+        // from glenda: declared "let" for status as global.
+        status = 0;
+        // from glenda, empty array
+        gameData.match = [];
+        // console.log(gameData.match);
     }
+
+    // from glenda: updated to named function and moved out of the captureResponse function
+    document.addEventListener('keydown', checkKey);
+
+    // this is how to remove an event listener:
+    // document.removeEventListener('keydown', checkKey);
+    
+    function checkKey(event){
+        let id = '';
+        if (event.key === 'w') {
+            // console.log('w key');
+            id = 'pad1';
+        } else 
+        if (event.key === 'a') {
+            // console.log('a key');
+            id = 'pad2';
+        } else 
+        if (event.key === 's') {
+            // console.log('s key');
+            id = 'pad3';
+        } else 
+        if (event.key === 'd') {
+            // console.log('d key');
+            id = 'pad4';
+        }
+
+        /* The following line pulls out the number at the end of the ID for the
+        pad that was clicked (charAt()), converts it into an integer (parseInt()) 
+        Then pushes it into the gameData.match array (push())*/
+        gameData.match.push(parseInt(id.charAt(3)));
+
+        /* This if statement checks to see if the length of the two
+        arrays is the same */ 
+        if( gameData.match.length == gameData.sequence.length){
+            console.log(gameData.match);
+            /* This loops through the match array and checks
+            to see if each element matches the corresponding element in the 
+            sequence array. */
+            for( let i=0; i<gameData.match.length; i++){
+                /* if any of the elements in the array do not match, then status
+                is set to zero and the player loses the game */
+                if( gameData.match[i] != gameData.sequence[i]){
+                    status = 0;
+                    message.innerHTML = "Sorry you lose. Better luck next time!";
+                }
+                /* If none of the matches in the loop trigger an error, status
+                is set to 1 and that value will be used to continue the game */
+                else {
+                    status = 1;
+                }
+            }
+        //this only runs if the game continues...
+        if(status){
+            /* settimeOut is used here just to provide a little time for the game to continue.SetupNextRound sets up the game for the next sequence*/
+            setTimeout(setupNextRound, 400);
+            }
+        }
+    };
 
     /* This function sets up the game for the next sequence and updates the game variables
     and interface. */
     function setupNextRound(){
+        
         //reset the counter for the next sequence
         counter = 0;
         // update the score
         gameData.score = gameData.score + gameData.count*5;
 
-
         // add roll dice here as a reward
         throwDice();
-
 
         /* the increment variable is used to determine how many rounds have each count.
         Currently, the game is set to three rounds of three pads, three rounds of four pads, etc. */
         gameData.increment = gameData.increment -1;
         // clear out the sequence array. The match one is cleared out at the end of the sequence.
         gameData.sequence = [];
+        // from glenda: reset the match array
+        gameData.match = [];
+        console.log (gameData.match);
         // set the new score
         currentScore.innerHTML = gameData.score;
-        message.innerHTML = "Great job! You got that one ready for the next one?";
+        // message.innerHTML = "Great job! You got that one ready for the next one?";
         action.innerHTML = '<a href="#">Start Next Round</a>';
         /* This replaces all the pads with new ones. This is necessary otherwise the old pads will
         get additional event listeners added to them in the captureResponse() function. There is the added
@@ -200,19 +194,19 @@
         the game. */
         document.querySelector('#action a').addEventListener('click', function(event){
             event.preventDefault();
+            // glenda added: clear the gameDice
+            gameDice.innerHTML = '';
+            // glenda moved this from the timeout to happen immediately so player could focus on the sequence (you can put it back in the Timeout if you prefer)
+            message.innerHTML = '';
+            action.innerHTML = '';
             callSequence(gameData.count, gameData.speed);
-            setTimeout(function(){
-                message.innerHTML = '';
-                action.innerHTML = '';
-            }, 1000);
+
+            // glenda commented out the Timeout
+            // setTimeout(function(){
+                
+            // }, 1000);
         } );
     }
-
-
-
-
-
-
 
 // Dice stuff
     const gameDice = document.querySelector('#game-dice');
@@ -222,7 +216,7 @@
     const gameDataDice = {
         dice: ['1die.svg', '2die.svg', '3die.svg', 
                '4die.svg', '5die.svg', '6die.svg'],
-        players: ['player 1', 'player 2'],
+        players: ['P1', 'P2'],
         score: [0, 0],
         roll1: 0,
         roll2: 0,
@@ -233,6 +227,7 @@
 
     function throwDice() {
         actionArea.innerHTML = '';
+        gameDice.innerHTML = '';
         gameDataDice.roll1 = Math.floor(Math.random() * 6) + 1;
         gameDataDice.roll2 = Math.floor(Math.random() * 6) + 1;
         console.log(gameDataDice.roll1);
@@ -265,6 +260,7 @@
             console.log('one of the two dice rolled is a 1');
             gameDataDice.index ? (gameDataDice.index = 0) : (gameDataDice.index = 1);
             gameDice.innerHTML += `<p>Sorry, one of you rolls was a one, switching to ${gameDataDice.players[gameDataDice.index = 1]}</p>`;
+            game.innerHTML += '<img class="p1boom" src="images/boom.svg" alt="boom">'
 
             // wait 2 seconds
             setTimeout(2000);
@@ -275,10 +271,10 @@
             console.log('neither dice was a 1, game continues');
             // update score
             gameDataDice.score[gameDataDice.index] = gameDataDice.score[gameDataDice.index] + gameDataDice.rollSum;
+
         }
 
         checkWinningCondition();
-
     }
 
     function checkWinningCondition(){
@@ -289,15 +285,15 @@
         } else {
             // show current score function here
             showCurrentScore();
-
-
         }
     }
 
     function showCurrentScore() {
         // score.innerHTML = `The score is curretly <strong>${gameData.players[0]} ${gameData.score[0]}</strong> and <strong>${gameData.player[1]} ${gameData.score[1]}</strong></p>`;
-        score.innerHTML = `<p>The score is currently <strong>${gameDataDice.players[0]}:
-        ${gameDataDice.score[0]}</strong> and <strong>${gameDataDice.players[1]}: 
+        score.innerHTML = `<p class="p1score">${gameDataDice.players[0]} SCORE<br><strong>
+        ${gameDataDice.score[0]}</strong></p>`;
+        score.innerHTML += '<p class="caption">vs</p>';
+        score.innerHTML += `<p class="p2score">${gameDataDice.players[1]} SCORE<br><strong>
         ${gameDataDice.score[1]}</strong></p>`;
     }
 

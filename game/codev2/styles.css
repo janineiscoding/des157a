@@ -41,25 +41,25 @@ body {
     /* align-content: center; */
 }
 
-h1, h2, h3{
+h1, h2, h3, #message{
     color: #e1e1e1;
     text-shadow: 4px 4px 0px #5900FF;
     font-family: Silkscreen;
-    font-size: 50px;
+    font-size: 30px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1em;
-    letter-spacing: -5px;
-    margin: 20px 0;
+    letter-spacing: -2px;
+    margin: 12px 0;
     text-align: center;
 }
 
-p{
+p, a{
     color: #e1e1e1;
-    font-family: Poppins;
-    font-size: 18px;
+    font-family: Silkscreen;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
     text-align: center;
 }
@@ -93,15 +93,56 @@ svg{
     transform: scale(30%);
 }
 
-#action a {
-    display: block;
-    text-decoration: none;
-    padding: 15px;
-    background-color: darkgrey;
-    border: 2px solid rgb(113, 112, 112);
-    border-radius: 5px;
-    width: 100px;
-    margin: auto;
-    color: #333;
-    font-weight: bold;
+.score-box{
+    border: 3px solid #5900FF;
+    background-color: #121212;
+    width: 336px;
+    height: 91px;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#score{
+    justify-self: center;
+    align-items: center;
+    display: flex;
+    gap: 40px;
+}
+
+.p1score{
+    color: #FFC300;
+    font-size: 13px;
+    padding-top: 3px;
+}
+
+.p2score{
+    color: #FF6200;
+    font-size: 13px;
+    padding-top: 3px;
+}
+
+strong{
+    font-family: Tektur;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 3px;
+}
+
+.caption{
+    color: #FFF;
+    font-family: Silkscreen;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.p1boom{
+    position: absolute;
+    left: 10vw;
+    top: 7vh;
 }

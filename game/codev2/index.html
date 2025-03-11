@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400&display=swap" rel="stylesheet">
         
     <!-- Styles CSS -->
     <link href="styles.css" rel="stylesheet">
@@ -21,8 +21,6 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Game Of Pac</h1>
-    <p id="score">Current Score: <span>0</span></p>
     <section id="game">
         <div id="pad1">
             <p>W</p>
@@ -53,9 +51,12 @@
             </svg>
         </div>
     </section>
-    <p id="message">Click the start game button to start</p>
-    <p id="action"><a href="#">Start Game</a></p> 
-    <p class="letters"></p>
+    <section class="score-box">
+        <p id="message">GAME OF PAC</p>
+        <p id="score"></p>
+        <p id="action"><a href="#">- Press Here to Start -</a></p> 
+        <p class="letters"></p>
+    </section>
 
     <div id="game-dice"></div>
     <div id="actions"></div>
