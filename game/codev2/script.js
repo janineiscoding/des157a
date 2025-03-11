@@ -46,7 +46,6 @@
         gameData1.match = [];
         // gameData2.match = [];
 
-        // console.log(gameData.match);
         callSequence1(gameData1.count, gameData1.speed);
         // callSequence2(gameData2.count, gameData2.speed);
 
@@ -275,8 +274,6 @@
     //     }
     // };
 
-    /* This function sets up the game for the next sequence and updates the game variables
-    and interface. */
     function setupNextRound(){
         
         //reset the counter for the next sequence
@@ -304,8 +301,7 @@
         benefit of not having event listeners on the pads during the callSequence phase of the game. */
         game1.innerHTML = '<div id="pad1"> <p>W</p> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="44" viewBox="0 0 60 44" fill="none"><path d="M0 44L30 0L60 44H0Z"/></svg></div>             <div id="pad2"> <p>A</p> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M52 0L52 60L8 30L52 0Z"/></svg></div>             <div id="pad3"> <p>S</p> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M0 8H60L30 52L0 8Z"/></svg></div>             <div id="pad4"> <p>D</p> <svg xmlns="http://www.w3.org/2000/svg" width="44" height="60" viewBox="0 0 44 60" fill="none"><path d="M0 60L-2.62268e-06 0L44 30L0 60Z"/></svg></div>';
 
-        /* This event listener kicks off the start of the next callSequence function and continues 
-        the game. */
+
         document.querySelector('#action a').addEventListener('click', function(event){
             event.preventDefault();
             // glenda added: clear the gameDice
@@ -324,7 +320,8 @@
     }
 
 // Dice stuff
-    const gameDice = document.querySelector('#game-dice');
+    const gameDice = document.querySelector('#game-dice1');
+    // const gameDice2 = document.querySelector('#game-dice2');
     const score = document.querySelector('#score');
     const actionArea = document.querySelector('#actions');    
 
@@ -340,6 +337,18 @@
         gameEnd: 29
     };
 
+    // const gameDataDice2 = {
+    //     dice: ['1die.svg', '2die.svg', '3die.svg', 
+    //            '4die.svg', '5die.svg', '6die.svg'],
+    //     players: ['P1', 'P2'],
+    //     score: [0, 0],
+    //     roll1: 0,
+    //     roll2: 0,
+    //     rollSum: 0,
+    //     index: 0,
+    //     gameEnd: 29
+    // };
+
     function throwDice() {
         actionArea.innerHTML = '';
         gameDice.innerHTML = '';
@@ -347,7 +356,7 @@
         gameDataDice.roll2 = Math.floor(Math.random() * 6) + 1;
         console.log(gameDataDice.roll1);
         console.log(gameDataDice.roll2);
-        gameDice.innerHTML += `<img src="images/${gameDataDice.dice[gameDataDice.roll1-1]}"> <img src="images/${gameDataDice.dice[gameDataDice.roll2-1]}">`
+        gameDice.innerHTML += `<img class="roll1" src="images/${gameDataDice.dice[gameDataDice.roll1-1]}"> <img class="roll2" src="images/${gameDataDice.dice[gameDataDice.roll2-1]}">`
         gameDataDice.rollSum = gameDataDice.roll1 + gameDataDice.roll2;
         // console.log(gameDataDice.rollSum);
 

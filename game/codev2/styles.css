@@ -82,9 +82,22 @@ p, a{
     left: 11vw;
 }
 
-#game1 #game-dice{
+#game-dice1{
     position: absolute;
-    left: 100px;
+    transform: translate(-50%, -50%);
+    top: 60vh;
+    left: 39vw;
+}
+
+#game-dice1 img.roll1{
+    transform: rotate(-9.152deg);
+    position: absolute;
+    left: -90px;
+    top: -50px;
+}
+
+#game-dice1 img.roll2{
+    transform: rotate(4.763deg);
 }
 
 #game1 div{
@@ -112,7 +125,7 @@ svg{
     width: 336px;
     height: 91px;
     position: absolute;
-    bottom: 15%;
+    bottom: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
