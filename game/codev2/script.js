@@ -22,7 +22,7 @@
         count: 3,
         increment: 3,
         score: 0,
-        speed: 500,
+        speed: 400,
         sequence: [0, 0, 0],
         match: [1, 1, 1]
     }
@@ -53,6 +53,24 @@
         message.innerHTML = '';
         bttn.innerHTML = 'Match the pattern';
     });
+
+    // Continue matching sequence
+    function nextSequence(event){
+        // event.preventDefault();
+        gameData1.sequence = [];
+        // gameData2.sequence = [];
+
+        // glenda added to reset the match array
+        gameData1.match = [];
+        // gameData2.match = [];
+
+        callSequence1(gameData1.count, gameData1.speed);
+        // callSequence2(gameData2.count, gameData2.speed);
+
+        // from glenda: once the game play is started I think the instructions and button should be removed because they get in the way of focusing on the sequence
+        message.innerHTML = '';
+        // bttn.innerHTML = 'Match the pattern';
+    };
 
     // A recursive function for creating the call sequence
     function callSequence1(sequenceLength, sequenceSpeed){
@@ -101,7 +119,7 @@
                 }, sequenceSpeed);
                 console.log(gameData1.sequence);
             }
-       }, 300);
+       }, 600);
     }
     // function callSequence2(sequenceLength, sequenceSpeed){
     //     pads = document.querySelectorAll('#game2 div');
@@ -295,35 +313,35 @@
         // set the new score
         currentScore.innerHTML = gameData1.score;
         // message.innerHTML = "Great job! You got that one ready for the next one?";
-        action.innerHTML = '<a href="#">Start Next Round</a>';
+        // action.innerHTML = '<a href="#">Start Next Round</a>';
         /* This replaces all the pads with new ones. This is necessary otherwise the old pads will
         get additional event listeners added to them in the captureResponse() function. There is the added
         benefit of not having event listeners on the pads during the callSequence phase of the game. */
         game1.innerHTML = '<div id="pad1"> <p>W</p> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="44" viewBox="0 0 60 44" fill="none"><path d="M0 44L30 0L60 44H0Z"/></svg></div>             <div id="pad2"> <p>A</p> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M52 0L52 60L8 30L52 0Z"/></svg></div>             <div id="pad3"> <p>S</p> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M0 8H60L30 52L0 8Z"/></svg></div>             <div id="pad4"> <p>D</p> <svg xmlns="http://www.w3.org/2000/svg" width="44" height="60" viewBox="0 0 44 60" fill="none"><path d="M0 60L-2.62268e-06 0L44 30L0 60Z"/></svg></div>';
 
 
-        document.querySelector('#action a').addEventListener('click', function(event){
-            event.preventDefault();
-            // glenda added: clear the gameDice
-            gameDice.innerHTML = '';
-            // glenda moved this from the timeout to happen immediately so player could focus on the sequence (you can put it back in the Timeout if you prefer)
-            message.innerHTML = '';
-            // commented out to test
-            action.innerHTML = '';
-            callSequence1(gameData1.count, gameData1.speed);
+        // document.querySelector('#action a').addEventListener('click', function(event){
+        //     event.preventDefault();
+        //     // glenda added: clear the gameDice
+        //     gameDice.innerHTML = '';
+        //     // glenda moved this from the timeout to happen immediately so player could focus on the sequence (you can put it back in the Timeout if you prefer)
+        //     message.innerHTML = '';
+        //     // commented out to test
+        //     action.innerHTML = '';
+        //     callSequence1(gameData1.count, gameData1.speed);
 
-            // glenda commented out the Timeout
-            // setTimeout(function(){
+        //     // glenda commented out the Timeout
+        //     // setTimeout(function(){
                 
-            // }, 1000);
-        } );
+        //     // }, 1000);
+        // } );
     }
 
 // Dice stuff
     const gameDice = document.querySelector('#game-dice1');
     // const gameDice2 = document.querySelector('#game-dice2');
     const score = document.querySelector('#score');
-    const actionArea = document.querySelector('#actions');    
+    const actionArea = document.querySelector('#actions');
 
     const gameDataDice = {
         dice: ['1die.svg', '2die.svg', '3die.svg', 
@@ -334,7 +352,7 @@
         roll2: 0,
         rollSum: 0,
         index: 0,
-        gameEnd: 29
+        gameEnd: 10
     };
 
     // const gameDataDice2 = {
@@ -406,6 +424,7 @@
     function checkWinningCondition(){
         if(gameDataDice.score[gameDataDice.index] > gameDataDice.gameEnd){
             score.innerHTML = `<h2>${gameDataDice.players[gameDataDice.index]} wins with ${gameDataDice.score[gameDataDice.index]} points!</h2>`; 
+            document.querySelector('#action a').innerHTML = '';
             actionArea.innerHTML = '';
             message.innerHTML += '<p id="quit">Start a New Game?</p>';
             document.querySelector('#quit').addEventListener('click', function(){
@@ -414,6 +433,8 @@
         } else {
             // show current score function here
             showCurrentScore();
+            nextSequence();
+            setTimeout(300);
         }
     }
 
