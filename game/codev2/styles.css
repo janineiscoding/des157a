@@ -70,6 +70,8 @@ h2{
     padding-top: 20px;
 }
 
+/* Help pop up */
+
 button{
     border: none;
     color: #e1e1e1;
@@ -110,6 +112,8 @@ button{
     right: 50px;
     top: 10px;
 }
+
+/*  */
 
 p, a, li{
     color: #e1e1e1;
