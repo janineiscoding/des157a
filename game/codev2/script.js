@@ -81,6 +81,7 @@
 
         // glenda added to reset the match array
         gameData1.match = [];
+        counter = 0;
 
         callSequence1(gameData1.count, gameData1.speed);
 
@@ -90,6 +91,7 @@
     function nextSequence2(event){
         gameData2.sequence = [];
         gameData2.match = [];
+        counter2 = 0;
         callSequence2(gameData2.count, gameData2.speed);
         message.innerHTML = '';
     };
@@ -127,7 +129,6 @@
                     callSequence1(sequenceLength, sequenceSpeed);
                 }, sequenceSpeed);
             }
-
             /* If the sequence is complete, wait the programmed amount of
             time, then remove the .on class from all pads, clear out the gameData.match
             array and capture the response. */
@@ -140,23 +141,19 @@
 
                     captureResponse1();
                 }, sequenceSpeed);
-                console.log(gameData1.sequence);
+                console.log('gameData1.sequence ' + gameData1.sequence);
             }
         }, 600);
     }
     function callSequence2(sequenceLength, sequenceSpeed){
         pads2 = document.querySelectorAll('#game2 div');
         setTimeout( function(){
-            //removes the .on class which has the animation for all the pads
             for( const eachPad of pads2 ){
                 eachPad.removeAttribute('class');
             }
             const num = Math.floor(Math.random()*4)+11;
-            // push the random number in the gameData.sequence object
             gameData2.sequence.push(num);
-            // animate the corresponding pad
             document.querySelector(`#pad${num}`).className = 'on';
-            // increment the counter 
             counter2++;
             /* If the sequence is not finishd, run the function again and
             animate the next pad in the sequence */ 
@@ -184,7 +181,7 @@
 
                     captureResponse2();
                 }, sequenceSpeed);
-                console.log(gameData2.sequence);
+                console.log('gameData2.sequence ' + gameData2.sequence);
             }
         }, 600);
     }
@@ -211,33 +208,59 @@
     // from glenda: updated to named function and moved out of the captureResponse function
     
     document.addEventListener('keydown', checkKey);
-    document.addEventListener('keydown', checkArrow);
+    // from glenda: commented out
+    // document.addEventListener('keydown', checkArrow);
 
     // this is how to remove an event listener:
     // document.removeEventListener('keydown', checkKey);
     
     // keyboard ok
     function checkKey(event){
+        console.log(event.key);
         let id = '';
-        if (event.key === 'w') {
-            id = 'pad1';
-        } else 
-        if (event.key === 'a') {
-            id = 'pad2';
-        } else 
-        if (event.key === 's') {
-            id = 'pad3';
-        } else 
-        if (event.key === 'd') {
-            id = 'pad4';
-        } else {
-            checkArrow();
+
+        if (event.key === 'w' || event.key === 'a' || event.key === 's' || event.key === 'd') {
+            if (event.key === 'w') {
+                id = 'pad1';
+            } else 
+            if (event.key === 'a') {
+                id = 'pad2';
+            } else 
+            if (event.key === 's') {
+                id = 'pad3';
+            } else 
+            if (event.key === 'd') {
+                id = 'pad4';
+            }
+
+            /* The following line pulls out the number at the end of the ID for the
+            pad that was clicked (charAt()), converts it into an integer (parseInt()) 
+            Then pushes it into the gameData.match array (push())*/
+            gameData1.match.push(parseInt(id.charAt(3)));
+
+        } else  if (event.key === 'ArrowUp' || event.key === 'ArrowLeft' || event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+            let id = '';
+
+            if (event.key === 'ArrowUp') {
+                id = 'pad11';
+            } else 
+            if (event.key === 'ArrowLeft') {
+                id = 'pad12';
+            } else 
+            if (event.key === 'ArrowDown') {
+                id = 'pad13';
+            } else 
+            if (event.key === 'ArrowRight') {
+                id = 'pad14';
+            } 
+
+            /* The following line pulls out the number at the end of the ID for the
+            pad that was clicked (charAt()), converts it into an integer (parseInt()) 
+            Then pushes it into the gameData.match array (push())*/
+            gameData2.match.push(parseInt(id.charAt(4))+10);
         }
 
-        /* The following line pulls out the number at the end of the ID for the
-        pad that was clicked (charAt()), converts it into an integer (parseInt()) 
-        Then pushes it into the gameData.match array (push())*/
-        gameData1.match.push(parseInt(id.charAt(3)));
+        
 
         /* This if statement checks to see if the length of the two
         arrays is the same */ 
@@ -250,8 +273,15 @@
                 /* if any of the elements in the array do not match, then status
                 is set to zero and the player loses the game */
                 if( gameData1.match[i] != gameData1.sequence[i]){
-                    p1Status = 0;
+                    showCurrentScore();
                     nextSequence();
+                    setTimeout(300);
+                    // Things we tried and good to remember
+                    // p1Status = 0;
+                    // gameData1.sequence = [];
+                    // console.log(`${gameData1.sequence}`);
+                    // counter = 0;
+                    // callSequence1(gameData1.count, gameData1.speed);
                 }
                 /* If none of the matches in the loop trigger an error, status
                 is set to 1 and that value will be used to continue the game */
@@ -266,8 +296,46 @@
 
             }
         }
+
+        /* This if statement checks to see if the length of the two
+        arrays is the same */ 
+        if( gameData2.match.length == gameData2.sequence.length){
+            console.log(gameData2.match);
+            /* This loops through the match array and checks
+            to see if each element matches the corresponding element in the 
+            sequence array. */
+            for( let i=0; i<gameData2.match.length; i++){
+                /* if any of the elements in the array do not match, then status
+                is set to zero and the player loses the game */
+                if( gameData2.match[i] != gameData2.sequence[i]){
+                    // Things we tried and good to remember
+                    // p2Status = 0;
+                    // console.log('gamedata2 did not match');
+                    // gameData2.sequence = [];
+                    // console.log(`${gameData2.sequence}`);
+                    // counter2 = 0;
+                    // callSequence2(gameData2.count, gameData2.speed);
+                    showCurrentScore();
+                    nextSequence2();
+                    setTimeout(300);
+
+                }
+                /* If none of the matches in the loop trigger an error, status
+                is set to 1 and that value will be used to continue the game */
+                else {
+                    p2Status = 1;
+                }
+            }
+        //this only runs if the game continues...
+        if(p2Status){
+            /* settimeOut is used here just to provide a little time for the game to continue.SetupNextRound sets up the game for the next sequence*/
+            setTimeout(setupNextRound2, 400);
+            }
+        }
+
     };
     function checkArrow(event){
+        console.log ('checking arrow');
         let id = '';
         if (event.key === 'ArrowUp') {
             id = 'pad11';
@@ -289,33 +357,33 @@
         Then pushes it into the gameData.match array (push())*/
         gameData2.match.push(parseInt(id.charAt(4))+10);
 
-        /* This if statement checks to see if the length of the two
-        arrays is the same */ 
-        if( gameData2.match.length == gameData2.sequence.length){
-            console.log(gameData2.match);
-            /* This loops through the match array and checks
-            to see if each element matches the corresponding element in the 
-            sequence array. */
-            for( let i=0; i<gameData2.match.length; i++){
-                /* if any of the elements in the array do not match, then status
-                is set to zero and the player loses the game */
-                if( gameData2.match[i] != gameData2.sequence[i]){
-                    p2Status = 0;
-                    // message.innerHTML = "Sorry you lose. Better luck next time!";
-                    nextSequence2();
-                }
-                /* If none of the matches in the loop trigger an error, status
-                is set to 1 and that value will be used to continue the game */
-                else {
-                    p2Status = 1;
-                }
-            }
-        //this only runs if the game continues...
-        if(p2Status){
-            /* settimeOut is used here just to provide a little time for the game to continue.SetupNextRound sets up the game for the next sequence*/
-            setTimeout(setupNextRound2, 400);
-            }
-        }
+        // /* This if statement checks to see if the length of the two
+        // arrays is the same */ 
+        // if( gameData2.match.length == gameData2.sequence.length){
+        //     console.log(gameData2.match);
+        //     /* This loops through the match array and checks
+        //     to see if each element matches the corresponding element in the 
+        //     sequence array. */
+        //     for( let i=0; i<gameData2.match.length; i++){
+        //         /* if any of the elements in the array do not match, then status
+        //         is set to zero and the player loses the game */
+        //         if( gameData2.match[i] != gameData2.sequence[i]){
+        //             p2Status = 0;
+        //             // message.innerHTML = "Sorry you lose. Better luck next time!";
+        //             nextSequence2();
+        //         }
+        //         /* If none of the matches in the loop trigger an error, status
+        //         is set to 1 and that value will be used to continue the game */
+        //         else {
+        //             p2Status = 1;
+        //         }
+        //     }
+        // //this only runs if the game continues...
+        // if(p2Status){
+        //     /* settimeOut is used here just to provide a little time for the game to continue.SetupNextRound sets up the game for the next sequence*/
+        //     setTimeout(setupNextRound2, 400);
+        //     }
+        // }
     };
 
     // set up round ok
@@ -393,9 +461,7 @@
     const gameDice = document.querySelector('#game-dice1');
     const gameDice2 = document.querySelector('#game-dice2');
     const score = document.querySelector('#score');
-    // const actionArea = document.querySelector('#actions');
 
-    // Shortened end game: 11
     const gameDataDice = {
         dice: ['1die.svg', '2die.svg', '3die.svg', 
                '4die.svg', '5die.svg', '6die.svg'],
@@ -405,7 +471,7 @@
         roll2: 0,
         rollSum: 0,
         index: 0,
-        gameEnd: 10
+        gameEnd: 29
     };
     const gameDataDice2 = {
         dice: ['1die.svg', '2die.svg', '3die.svg', 
@@ -416,19 +482,18 @@
         roll2: 0,
         rollSum: 0,
         index: 0,
-        gameEnd: 10
+        gameEnd: 29
     };
 
     const diceSound = new Audio('sounds/dice.wav');
     // throw dice ok
     function throwDice() {
-        // actionArea.innerHTML = '';
         diceSound.play();
         gameDice.innerHTML = '';
         gameDataDice.roll1 = Math.floor(Math.random() * 6) + 1;
         gameDataDice.roll2 = Math.floor(Math.random() * 6) + 1;
-        console.log(gameDataDice.roll1);
-        console.log(gameDataDice.roll2);
+        // console.log(gameDataDice.roll1);
+        // console.log(gameDataDice.roll2);
         gameDice.innerHTML += `<img class="roll1" src="images/${gameDataDice.dice[gameDataDice.roll1-1]}"> <img class="roll2" src="images/${gameDataDice.dice[gameDataDice.roll2-1]}">`
         gameDataDice.rollSum = gameDataDice.roll1 + gameDataDice.roll2;
         // console.log(gameDataDice.rollSum);
@@ -440,8 +505,7 @@
 
         // if two 1's are rolled
         if (gameDataDice.rollSum === 2){
-            // console.log('snake eyes!');
-            // zero out the score
+            // zero out the score for both players
             gameDataDice.score[gameDataDice.index] = 0;
             cherryBomb();
 
@@ -451,8 +515,6 @@
 
         // if either die is a 1
         else if (gameDataDice.roll1 === 1 || gameDataDice.roll2 === 1){
-            // console.log('one of the two dice rolled is a 1');
-            // gameDataDice.index ? (gameDataDice.index = 0) : (gameDataDice.index = 1);
             p1Boom();
 
             // wait 2 seconds
@@ -461,7 +523,6 @@
 
         // if neighther is a 1
         else {
-            console.log('neither dice was a 1, game continues');
             // update score
             gameDataDice.score[gameDataDice.index] = gameDataDice.score[gameDataDice.index] + gameDataDice.rollSum;
 
@@ -470,13 +531,12 @@
         checkWinningCondition();
     }
     function throwDice2() {
-        // actionArea.innerHTML = '';
         diceSound.play();
         gameDice2.innerHTML = '';
         gameDataDice2.roll1 = Math.floor(Math.random() * 6) + 1;
         gameDataDice2.roll2 = Math.floor(Math.random() * 6) + 1;
-        console.log(gameDataDice2.roll1);
-        console.log(gameDataDice2.roll2);
+        // console.log(gameDataDice2.roll1);
+        // console.log(gameDataDice2.roll2);
         gameDice2.innerHTML += `<img class="roll11" src="images/${gameDataDice2.dice[gameDataDice2.roll1-1]}"> <img class="roll12" src="images/${gameDataDice2.dice[gameDataDice2.roll2-1]}">`
         gameDataDice2.rollSum = gameDataDice2.roll1 + gameDataDice2.roll2;
         // console.log(gameDataDice.rollSum);
@@ -488,13 +548,9 @@
 
         // if two 1's are rolled
         if (gameDataDice2.rollSum === 2){
-            // setTimeout(5000);
-            console.log('snake eyes!');
-            // gameDice2.innerHTML += '<p>Oh snap! Snake eyes!</p>';
-            // zero out the score
+            // zero out the score for both players
             gameDataDice2.score[gameDataDice2.index] = 0;
             cherryBomb();
-            // we will add showCurrentScore() function here
 
             // wait 2 seconds
             setTimeout(2000);
@@ -502,7 +558,6 @@
 
         // if either die is a 1
         else if (gameDataDice2.roll1 === 1 || gameDataDice2.roll2 === 1){
-            // console.log('one of the two dice rolled is a 1');
             p2Boom();
             // wait 2 seconds
             setTimeout(2000);
@@ -510,7 +565,6 @@
 
         // if neighther is a 1
         else {
-            console.log('neither dice was a 1, game continues');
             // update score
             gameDataDice2.score[gameDataDice2.index] = gameDataDice2.score[gameDataDice2.index] + gameDataDice2.rollSum;
 
@@ -537,6 +591,8 @@
     function cherryBomb(){
         gameData1.score = 0;
         gameData2.score = 0;
+        gameDataDice.score = [0, 0];
+        gameDataDice2.score = [0, 0];
         document.querySelector(".cherry-bomb").style.display = 'block';
         setTimeout(function(){
             document.querySelector(".cherry-bomb").style.display = 'none';
@@ -549,8 +605,6 @@
         if(gameDataDice.score[gameDataDice.index] > gameDataDice.gameEnd){
             winSound.play();
             score.innerHTML = `<h2>P1 wins with ${gameDataDice.score[gameDataDice.index]} points!</h2>`; 
-            document.querySelector('#action a').innerHTML = '';
-            // actionArea.innerHTML = '';
             message.innerHTML += '<p id="quit">Start a New Game?</p>';
             document.querySelector('#quit').addEventListener('click', function(){
                 window.location.reload();
@@ -566,8 +620,6 @@
         if(gameDataDice2.score[gameDataDice2.index] > gameDataDice2.gameEnd){
             winSound.play();
             score.innerHTML = `<h2>P2 wins with ${gameDataDice2.score[gameDataDice2.index]} points!</h2>`; 
-            document.querySelector('#action a').innerHTML = '';
-            // actionArea.innerHTML = '';
             message.innerHTML += '<p id="quit">Start a New Game?</p>';
             document.querySelector('#quit').addEventListener('click', function(){
                 window.location.reload();
