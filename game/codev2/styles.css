@@ -158,8 +158,8 @@ a{
 #game-dice1{
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 60vh;
-    left: 39vw;
+    top: 60%;
+    left: 39%;
 }
 
 #game-dice1 img.roll1{
@@ -199,8 +199,8 @@ a{
 #game-dice2{
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 60vh;
-    right: 35vw;
+    top: 60%;
+    right: 35%;
 }
 
 #game-dice2 img.roll11{
