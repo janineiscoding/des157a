@@ -74,7 +74,6 @@
     });
 
     // Continue matching sequence
-    // next sequence ok
     function nextSequence(event){
         // event.preventDefault();
         gameData1.sequence = [];
@@ -97,7 +96,6 @@
     };
 
     // A recursive function for creating the call sequence
-    // call sequence ok
     function callSequence1(sequenceLength, sequenceSpeed){
         /* reassigning padds because after the first round they will be
         removed from the DOM and re-added in the setupNextRound function */
@@ -188,7 +186,6 @@
 
     /* This is the function that captures responses from the user, and
     checks to see if they have pressed the pads in the correct order. */
-    // capture response ok
     function captureResponse1(){
         action.innerHTML = '';
         /* The status variable is used to check the status of the game. Should it
@@ -208,13 +205,10 @@
     // from glenda: updated to named function and moved out of the captureResponse function
     
     document.addEventListener('keydown', checkKey);
-    // from glenda: commented out
-    // document.addEventListener('keydown', checkArrow);
 
     // this is how to remove an event listener:
     // document.removeEventListener('keydown', checkKey);
     
-    // keyboard ok
     function checkKey(event){
         console.log(event.key);
         let id = '';
@@ -259,8 +253,6 @@
             Then pushes it into the gameData.match array (push())*/
             gameData2.match.push(parseInt(id.charAt(4))+10);
         }
-
-        
 
         /* This if statement checks to see if the length of the two
         arrays is the same */ 
@@ -308,13 +300,6 @@
                 /* if any of the elements in the array do not match, then status
                 is set to zero and the player loses the game */
                 if( gameData2.match[i] != gameData2.sequence[i]){
-                    // Things we tried and good to remember
-                    // p2Status = 0;
-                    // console.log('gamedata2 did not match');
-                    // gameData2.sequence = [];
-                    // console.log(`${gameData2.sequence}`);
-                    // counter2 = 0;
-                    // callSequence2(gameData2.count, gameData2.speed);
                     showCurrentScore();
                     nextSequence2();
                     setTimeout(300);
@@ -334,67 +319,14 @@
         }
 
     };
-    function checkArrow(event){
-        console.log ('checking arrow');
-        let id = '';
-        if (event.key === 'ArrowUp') {
-            id = 'pad11';
-        } else 
-        if (event.key === 'ArrowLeft') {
-            id = 'pad12';
-        } else 
-        if (event.key === 'ArrowDown') {
-            id = 'pad13';
-        } else 
-        if (event.key === 'ArrowRight') {
-            id = 'pad14';
-        } else {
-            checkKey();
-        }
 
-        /* The following line pulls out the number at the end of the ID for the
-        pad that was clicked (charAt()), converts it into an integer (parseInt()) 
-        Then pushes it into the gameData.match array (push())*/
-        gameData2.match.push(parseInt(id.charAt(4))+10);
-
-        // /* This if statement checks to see if the length of the two
-        // arrays is the same */ 
-        // if( gameData2.match.length == gameData2.sequence.length){
-        //     console.log(gameData2.match);
-        //     /* This loops through the match array and checks
-        //     to see if each element matches the corresponding element in the 
-        //     sequence array. */
-        //     for( let i=0; i<gameData2.match.length; i++){
-        //         /* if any of the elements in the array do not match, then status
-        //         is set to zero and the player loses the game */
-        //         if( gameData2.match[i] != gameData2.sequence[i]){
-        //             p2Status = 0;
-        //             // message.innerHTML = "Sorry you lose. Better luck next time!";
-        //             nextSequence2();
-        //         }
-        //         /* If none of the matches in the loop trigger an error, status
-        //         is set to 1 and that value will be used to continue the game */
-        //         else {
-        //             p2Status = 1;
-        //         }
-        //     }
-        // //this only runs if the game continues...
-        // if(p2Status){
-        //     /* settimeOut is used here just to provide a little time for the game to continue.SetupNextRound sets up the game for the next sequence*/
-        //     setTimeout(setupNextRound2, 400);
-        //     }
-        // }
-    };
-
-    // set up round ok
     function setupNextRound(){
-        
         //reset the counter for the next sequence
         counter = 0;
         // update the score
         gameData1.score = gameData1.score + gameData1.count*5;
 
-        // add roll dice here as a reward
+        // roll dice here as reward
         throwDice();
 
         /* the increment variable is used to determine how many rounds have each count.
@@ -407,32 +339,14 @@
         console.log (gameData1.match);
         // set the new score
         currentScore.innerHTML = gameData1.score;
-        // message.innerHTML = "Great job! You got that one ready for the next one?";
-        // action.innerHTML = '<a href="#">Start Next Round</a>';
         /* This replaces all the pads with new ones. This is necessary otherwise the old pads will
         get additional event listeners added to them in the captureResponse() function. There is the added
         benefit of not having event listeners on the pads during the callSequence phase of the game. */
         game1.innerHTML = '<div id="pad1"> <p>W</p> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="44" viewBox="0 0 60 44" fill="none"><path d="M0 44L30 0L60 44H0Z"/></svg></div>             <div id="pad2"> <p>A</p> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M52 0L52 60L8 30L52 0Z"/></svg></div>             <div id="pad3"> <p>S</p> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none"><path d="M0 8H60L30 52L0 8Z"/></svg></div>             <div id="pad4"> <p>D</p> <svg xmlns="http://www.w3.org/2000/svg" width="44" height="60" viewBox="0 0 44 60" fill="none"><path d="M0 60L-2.62268e-06 0L44 30L0 60Z"/></svg></div>';
 
-
-        // document.querySelector('#action a').addEventListener('click', function(event){
-        //     event.preventDefault();
-        //     // glenda added: clear the gameDice
-        //     gameDice.innerHTML = '';
-        //     // glenda moved this from the timeout to happen immediately so player could focus on the sequence (you can put it back in the Timeout if you prefer)
-        //     message.innerHTML = '';
-        //     // commented out to test
-        //     action.innerHTML = '';
-        //     callSequence1(gameData1.count, gameData1.speed);
-
-        //     // glenda commented out the Timeout
-        //     // setTimeout(function(){
-                
-        //     // }, 1000);
-        // } );
     }
+
     function setupNextRound2(){
-        
         //reset the counter for the next sequence
         counter2 = 0;
         // update the score
@@ -530,6 +444,7 @@
 
         checkWinningCondition();
     }
+    
     function throwDice2() {
         diceSound.play();
         gameDice2.innerHTML = '';
@@ -567,7 +482,6 @@
         else {
             // update score
             gameDataDice2.score[gameDataDice2.index] = gameDataDice2.score[gameDataDice2.index] + gameDataDice2.rollSum;
-
         }
 
         checkWinningCondition2();
@@ -589,6 +503,7 @@
     }
 
     function cherryBomb(){
+        // Setting all scores to 0
         gameData1.score = 0;
         gameData2.score = 0;
         gameDataDice.score = [0, 0];
