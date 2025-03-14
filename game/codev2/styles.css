@@ -35,6 +35,14 @@ body {
     justify-self: center;
 }
 
+#container{
+    width: 1200px;
+    height: 750px;
+    place-content: center;
+    position: relative;
+    display: grid;
+}
+
 h1, h3, #message{
     color: #e1e1e1;
     text-shadow: 4px 4px 0px #5900FF;
@@ -69,7 +77,9 @@ button{
     font-family: Silkscreen;
     background-color: #121212;
     padding: 2px 5px;
-    margin-top: 20px;
+    position: absolute;
+    justify-self: center;
+    top: 20px;
 }
 
 .help{
@@ -82,6 +92,17 @@ button{
     margin-top: 10%;
     padding: 20px 40px;
     position: relative;
+}
+
+.help p{
+    padding-top: 20px;
+    text-align: left;
+}
+
+.help li{
+    text-align: left;
+    list-style-type: square;
+    margin-left: 20px;
 }
 
 .close{
@@ -109,17 +130,6 @@ a{
     cursor:pointer;
 }
 
-.help p{
-    padding-top: 20px;
-    text-align: left;
-}
-
-.help li{
-    text-align: left;
-    list-style-type: square;
-    margin-left: 20px;
-}
-
 #score span {
     font-weight: bold;
 }
@@ -137,8 +147,8 @@ a{
     gap: 10px;
     justify-content: center;
     position: absolute;
-    top: 22.5vh;
-    left: 11vw;
+    top: 22.5%;
+    left: 11%;
 }
 
 #game-dice1{
@@ -178,8 +188,8 @@ a{
     gap: 10px;
     justify-content: center;
     position: absolute;
-    top: 24vh;
-    right: 11.5vw;
+    top: 23%;
+    right: 11.5%;
 }
 
 #game-dice2{

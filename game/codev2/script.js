@@ -50,7 +50,7 @@
         count: 3,
         increment: 3,
         score: 0,
-        speed: 500,
+        speed: 300,
         sequence: [0, 0, 0],
         match: [1, 1, 1]
     }
@@ -143,7 +143,7 @@
                 }, sequenceSpeed);
                 console.log('gameData1.sequence ' + gameData1.sequence);
             }
-        }, 600);
+        }, 500);
     }
     function callSequence2(sequenceLength, sequenceSpeed){
         pads2 = document.querySelectorAll('#game2 div');
@@ -183,7 +183,7 @@
                 }, sequenceSpeed);
                 console.log('gameData2.sequence ' + gameData2.sequence);
             }
-        }, 600);
+        }, 500);
     }
 
     /* This is the function that captures responses from the user, and
